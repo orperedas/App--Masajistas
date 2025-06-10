@@ -3,17 +3,16 @@
 using namespace std;
 
 int main(){
+
     int opcion;
 
     do{
         cout << "=================================================" << endl;
         cout << "                 App Masajistas                  " << endl;
         cout << "=================================================" << endl;
-        cout << endl;
         cout << "     Sistema de gesti¢n de servicios masajes     " << endl;
         cout << "            alta, modificaci¢n y baja            " << endl;
         cout << "       de masajistas, empresas y servicios       " << endl;
-        cout << endl;
         cout << "-------------------------------------------------" << endl;
         cout << endl;
         cout << "  1. Masajistas" << endl;
@@ -22,8 +21,10 @@ int main(){
         cout << endl;
         cout << "=================================================" << endl;
         cout << endl;
-        cout << "     ngrese una opci¢n para continuar:  ";
+        cout << "     Ingrese una opci¢n para continuar:  ";
         cin >> opcion;
+        cout << endl;
+
 
         switch (opcion) {
             case 1:
@@ -39,7 +40,7 @@ int main(){
                 cout << "Saliendo del programa..." << endl;
                 break;
             default:
-                cout << "Opci¢n inv lida. Intente de nuevo." << endl;
+                cout << "La ppci¢n ingresada es inv lida. Intente de nuevo." << endl;
         }
 
         cout << endl;
