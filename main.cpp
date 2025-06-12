@@ -1,9 +1,12 @@
 #include <iostream>
 
+#include "Menu.h"
+
 using namespace std;
 
 int main(){
 
+    Menu Menu;
     int opcion;
 
     do{
@@ -28,13 +31,13 @@ int main(){
 
         switch (opcion) {
             case 1:
-                cout << "Has seleccionado la opci¢n 1" << endl;
+                Menu.masajistas();
                 break;
             case 2:
-                cout << "Has seleccionado la opci¢n 2" << endl;
+                cout << "Menu.empresas()" << endl;
                 break;
             case 3:
-                cout << "Has seleccionado la opci¢n 3" << endl;
+                cout << "Menu.servicios()" << endl;
                 break;
             case 0:
                 cout << "Saliendo del programa..." << endl;
@@ -50,3 +53,4 @@ int main(){
 
     return 0;
 }
+

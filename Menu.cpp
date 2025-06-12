@@ -1,0 +1,161 @@
+#include <iostream>
+
+#include "Menu.h"
+
+using namespace std;
+
+void Menu::masajistas(){
+    int opcion;
+
+    do{
+        cout << "=================================================" << endl;
+        cout << "                 App Masajistas                  " << endl;
+        cout << "=================================================" << endl;
+        cout << "     Sistema de gestión de servicios masajes     " << endl;
+        cout << "            alta, modificación y baja            " << endl;
+        cout << "       de masajistas, empresas y servicios       " << endl;
+        cout << "-------------------------------------------------" << endl;
+        cout << endl;
+        cout << "  ----- MENÚ MASAJISTAS -----" << endl;
+        cout << endl;
+        cout << "    1. Listar masajista" << endl;
+        cout << "    2. Agregar masajista" << endl;
+        cout << "    3. Modificar masajista" << endl;
+        cout << "    3. Eliminar masajista" << endl;
+        cout << endl;
+        cout << "=================================================" << endl;
+        cout << endl;
+        cout << "     Ingrese una opción para continuar:  ";
+        cin >> opcion;
+        cout << endl;
+
+
+        switch (opcion) {
+            case 1:
+                cout << "Listado de masajistas" << endl;
+                break;
+            case 2:
+                cout << "Agregrar masajista" << endl;
+                break;
+            case 3:
+                cout << "Modificar masajista" << endl;
+                break;
+            case 4:
+                cout << "Eliminar masajista" << endl;
+                break;
+            case 0:
+                cout << "Volviendo al menú principal..." << endl;
+                break;
+            default:
+                cout << "La ppción ingresada es inválida. Intente de nuevo." << endl;
+        }
+
+        cout << endl;
+
+    }
+    while (opcion != 0);
+}
+
+void Menu::empresas(){
+    int opcion;
+
+    do{
+        cout << "=================================================" << endl;
+        cout << "                 App Masajistas                  " << endl;
+        cout << "=================================================" << endl;
+        cout << "     Sistema de gestión de servicios masajes     " << endl;
+        cout << "            alta, modificación y baja            " << endl;
+        cout << "       de masajistas, empresas y servicios       " << endl;
+        cout << "-------------------------------------------------" << endl;
+        cout << endl;
+        cout << "  ----- MENÚ EMPRESAS -----" << endl;
+        cout << endl;
+        cout << "    1. Listar empresa" << endl;
+        cout << "    2. Agregar empresa" << endl;
+        cout << "    3. Modificar empresa" << endl;
+        cout << "    4. Eliminar empresa" << endl;
+        cout << endl;
+        cout << "=================================================" << endl;
+        cout << endl;
+        cout << "     Ingrese una opción para continuar:  ";
+        cin >> opcion;
+        cout << endl;
+
+
+        switch (opcion) {
+            case 1:
+                cout << "Listado de empresa" << endl;
+                break;
+            case 2:
+                cout << "Agregrar empresa" << endl;
+                break;
+            case 3:
+                cout << "Modificar empresa" << endl;
+                break;
+            case 4:
+                cout << "Eliminar empresa" << endl;
+                break;
+            case 0:
+                cout << "Volviendo al menú principal..." << endl;
+                break;
+            default:
+                cout << "La ppción ingresada es inválida. Intente de nuevo." << endl;
+        }
+
+        cout << endl;
+
+    }
+    while (opcion != 0);
+}
+
+void Menu::servicios(){
+    int opcion;
+
+    do{
+        cout << "=================================================" << endl;
+        cout << "                 App Masajistas                  " << endl;
+        cout << "=================================================" << endl;
+        cout << "     Sistema de gestión de servicios masajes     " << endl;
+        cout << "            alta, modificación y baja            " << endl;
+        cout << "       de masajistas, empresas y servicios       " << endl;
+        cout << "-------------------------------------------------" << endl;
+        cout << endl;
+        cout << "  ----- MENÚ SERVICIOS -----" << endl;
+        cout << endl;
+        cout << "    1. Listar servicios" << endl;
+        cout << "    2. Agregar servicio" << endl;
+        cout << "    3. Modificar servicio" << endl;
+        cout << "    4. Eliminar servicio" << endl;
+        cout << endl;
+        cout << "=================================================" << endl;
+        cout << endl;
+        cout << "     Ingrese una opción para continuar:  ";
+        cin >> opcion;
+        cout << endl;
+
+
+        switch (opcion) {
+            case 1:
+                cout << "Listado de servicios" << endl;
+                break;
+            case 2:
+                cout << "Agregrar servicio" << endl;
+                break;
+            case 3:
+                cout << "Modificar servicio" << endl;
+                break;
+            case 4:
+                cout << "Eliminar servicio" << endl;
+                break;
+            case 0:
+                cout << "Volviendo al menú principal..." << endl;
+                break;
+            default:
+                cout << "La ppción ingresada es inválida. Intente de nuevo." << endl;
+        }
+
+        cout << endl;
+
+    }
+    while (opcion != 0);
+}
