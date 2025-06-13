@@ -4,24 +4,71 @@
 
 using namespace std;
 
+void Menu::cabeceraMenu(){
+    cout << "=================================================" << endl;
+    cout << "                 App Masajistas                  " << endl;
+    cout << "-------------------------------------------------" << endl;
+    cout << "    Sistema de gestión de servicios de masaje    " << endl;
+    cout << "            alta, modificación y baja            " << endl;
+    cout << "       de masajistas, empresas y servicios       " << endl;
+    cout << "-------------------------------------------------" << endl;
+    cout << endl;
+}
+
+void Menu::principal(){
+    int opcion;
+
+    do{
+        Menu::cabeceraMenu();
+
+        cout << "  ----- MENÚ PRINCIPAL -----" << endl;
+        cout << endl;
+        cout << "  1. Masajistas" << endl;
+        cout << "  2. Empresas" << endl;
+        cout << "  3. Servicios" << endl;
+        cout << endl;
+        cout << "=================================================" << endl;
+        cout << endl;
+        cout << "     Ingrese una opción para continuar:  ";
+        cin >> opcion;
+        cout << endl;
+
+
+        switch (opcion) {
+            case 1:
+                Menu::masajistas();
+                break;
+            case 2:
+                Menu::empresas();
+                break;
+            case 3:
+                Menu::servicios();
+                break;
+            case 0:
+                cout << "Saliendo del programa..." << endl;
+                break;
+            default:
+                cout << "La ppción ingresada no es válida. Intente de nuevo." << endl;
+        }
+
+        cout << endl;
+
+    }
+    while (opcion != 0);
+}
+
 void Menu::masajistas(){
     int opcion;
 
     do{
-        cout << "=================================================" << endl;
-        cout << "                 App Masajistas                  " << endl;
-        cout << "=================================================" << endl;
-        cout << "     Sistema de gestión de servicios masajes     " << endl;
-        cout << "            alta, modificación y baja            " << endl;
-        cout << "       de masajistas, empresas y servicios       " << endl;
-        cout << "-------------------------------------------------" << endl;
-        cout << endl;
+        Menu::cabeceraMenu();
+
         cout << "  ----- MENÚ MASAJISTAS -----" << endl;
         cout << endl;
         cout << "    1. Listar masajista" << endl;
         cout << "    2. Agregar masajista" << endl;
         cout << "    3. Modificar masajista" << endl;
-        cout << "    3. Eliminar masajista" << endl;
+        cout << "    4. Eliminar masajista" << endl;
         cout << endl;
         cout << "=================================================" << endl;
         cout << endl;
@@ -60,14 +107,8 @@ void Menu::empresas(){
     int opcion;
 
     do{
-        cout << "=================================================" << endl;
-        cout << "                 App Masajistas                  " << endl;
-        cout << "=================================================" << endl;
-        cout << "     Sistema de gestión de servicios masajes     " << endl;
-        cout << "            alta, modificación y baja            " << endl;
-        cout << "       de masajistas, empresas y servicios       " << endl;
-        cout << "-------------------------------------------------" << endl;
-        cout << endl;
+        Menu::cabeceraMenu();
+
         cout << "  ----- MENÚ EMPRESAS -----" << endl;
         cout << endl;
         cout << "    1. Listar empresa" << endl;
@@ -112,14 +153,8 @@ void Menu::servicios(){
     int opcion;
 
     do{
-        cout << "=================================================" << endl;
-        cout << "                 App Masajistas                  " << endl;
-        cout << "=================================================" << endl;
-        cout << "     Sistema de gestión de servicios masajes     " << endl;
-        cout << "            alta, modificación y baja            " << endl;
-        cout << "       de masajistas, empresas y servicios       " << endl;
-        cout << "-------------------------------------------------" << endl;
-        cout << endl;
+        Menu::cabeceraMenu();
+
         cout << "  ----- MENÚ SERVICIOS -----" << endl;
         cout << endl;
         cout << "    1. Listar servicios" << endl;
