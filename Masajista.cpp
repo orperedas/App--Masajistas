@@ -1,6 +1,5 @@
 #include "Masajista.h"
 
-#include <iostream>
 #include <cstring>
 
 using namespace std;
@@ -15,7 +14,7 @@ Masajista::Masajista(){
     strcpy(_email, "");
 }
 
-Masajista::Masajista(std::string dni, std::string nombre, std::string apellido, std::string cuit, std::string telefono, std::string direccion, std::string email){
+Masajista::Masajista(std::string dni, std::string nombre, std::string apellido, std::string cuit, std::string direccion, std::string telefono, std::string email){
     setDni(dni);
     setNombre(nombre);
     setApellido(apellido);
