@@ -32,12 +32,22 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Empresa.cpp" />
+		<Unit filename="Empresa.h" />
 		<Unit filename="Fecha.cpp" />
 		<Unit filename="Fecha.h" />
 		<Unit filename="Masajista.cpp" />
 		<Unit filename="Masajista.h" />
+		<Unit filename="MasajistaArchivo.cpp" />
+		<Unit filename="MasajistaArchivo.h" />
+		<Unit filename="MasajistaManager.cpp" />
+		<Unit filename="MasajistaManager.h" />
 		<Unit filename="Menu.cpp" />
 		<Unit filename="Menu.h" />
+		<Unit filename="Sede.cpp" />
+		<Unit filename="Sede.h" />
+		<Unit filename="TipoServicio.cpp" />
+		<Unit filename="TipoServicio.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />

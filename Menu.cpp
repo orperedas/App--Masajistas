@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "Menu.h"
+#include "MasajistaManager.h"
 
 using namespace std;
 
@@ -26,6 +27,8 @@ void Menu::principal(){
         cout << "  1. Masajistas" << endl;
         cout << "  2. Empresas" << endl;
         cout << "  3. Servicios" << endl;
+        cout << endl;
+        cout << "  0. Salir de App Masajistas"
         cout << endl;
         cout << "=================================================" << endl;
         cout << endl;
@@ -60,15 +63,19 @@ void Menu::principal(){
 void Menu::masajistas(){
     int opcion;
 
+    MasajistaManager masajistaManager;
+
     do{
         Menu::cabeceraMenu();
 
         cout << "  ----- MENÚ MASAJISTAS -----" << endl;
         cout << endl;
-        cout << "    1. Listar masajista" << endl;
-        cout << "    2. Agregar masajista" << endl;
+        cout << "    1. Agregar masajista" << endl;
+        cout << "    2. Listar masajista" << endl;
         cout << "    3. Modificar masajista" << endl;
         cout << "    4. Eliminar masajista" << endl;
+        cout << endl;
+        cout << "    0. Volver al Menú Principal" << endl;
         cout << endl;
         cout << "=================================================" << endl;
         cout << endl;
@@ -79,10 +86,10 @@ void Menu::masajistas(){
 
         switch (opcion) {
             case 1:
-                cout << "Listado de masajistas" << endl;
+                masajistaManager.cargarMasajista();
                 break;
             case 2:
-                cout << "Agregrar masajista" << endl;
+                cout << "Listado de masajistas" << endl;
                 break;
             case 3:
                 cout << "Modificar masajista" << endl;
@@ -115,6 +122,8 @@ void Menu::empresas(){
         cout << "    2. Agregar empresa" << endl;
         cout << "    3. Modificar empresa" << endl;
         cout << "    4. Eliminar empresa" << endl;
+        cout << endl;
+        cout << "    0. Volver al Menú Principal" << endl;
         cout << endl;
         cout << "=================================================" << endl;
         cout << endl;
@@ -161,6 +170,8 @@ void Menu::servicios(){
         cout << "    2. Agregar servicio" << endl;
         cout << "    3. Modificar servicio" << endl;
         cout << "    4. Eliminar servicio" << endl;
+        cout << endl;
+        cout << "    0. Volver al Menú Principal" << endl;
         cout << endl;
         cout << "=================================================" << endl;
         cout << endl;
