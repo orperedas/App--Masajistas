@@ -10,7 +10,8 @@ class MasajistaArchivo{
 
     public:
         MasajistaArchivo();
-        MasajistaArchivo(std:string nombreArchivo);
+        MasajistaArchivo(std::string nombreArchivo);
 
-        bool guardar(Postulante registro);
+        bool guardar(Masajista registro);
+        int getCantidadMasajistas();
 };

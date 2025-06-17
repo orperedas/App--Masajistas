@@ -28,7 +28,7 @@ void Menu::principal(){
         cout << "  2. Empresas" << endl;
         cout << "  3. Servicios" << endl;
         cout << endl;
-        cout << "  0. Salir de App Masajistas"
+        cout << "  0. Salir de App Masajistas" << endl;
         cout << endl;
         cout << "=================================================" << endl;
         cout << endl;
@@ -74,6 +74,7 @@ void Menu::masajistas(){
         cout << "    2. Listar masajista" << endl;
         cout << "    3. Modificar masajista" << endl;
         cout << "    4. Eliminar masajista" << endl;
+        cout << "    5. Mostrar cantitdad de masajistas" << endl;
         cout << endl;
         cout << "    0. Volver al Menú Principal" << endl;
         cout << endl;
@@ -96,6 +97,9 @@ void Menu::masajistas(){
                 break;
             case 4:
                 cout << "Eliminar masajista" << endl;
+                break;
+            case 5:
+                masajistaManager.mostrarCantidadMasajistas();
                 break;
             case 0:
                 cout << "Volviendo al menú principal..." << endl;

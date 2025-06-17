@@ -1,5 +1,6 @@
-#include "MasajistaManager.h"
 #include "Masajista.h"
+#include "MasajistaArchivo.h"
+#include "MasajistaManager.h"
 
 #include <iostream>
 #include <string>
@@ -9,6 +10,7 @@ using namespace std;
 void MasajistaManager::cargarMasajista(){
 
     Masajista masajista;
+    MasajistaArchivo masArchivo;
 
     string dni, nombre, apellido, cuit, direccion, telefono, email;
 
@@ -37,4 +39,19 @@ void MasajistaManager::cargarMasajista(){
     cout << "Dirección: " << direccion << endl;
 
     masajista = Masajista(dni, nombre, apellido, cuit, direccion, telefono, email);
+
+    if(masArchivo.guardar(masajista)){
+        cout << "Nuevo masajista guardado con éxito." << endl;
+    }
+    else{
+        cout << "Error inesperado, no se guardó el registro" << endl;
+    }
+}
+
+void MasajistaManager::mostrarCantidadMasajistas(){
+    MasajistaArchivo masArchivo;
+
+    int cantidadMasajistas = masArchivo.getCantidadMasajistas();
+
+    cout << "Cantidad total de masajistas en la empresa: " << cantidadMasajistas << endl;
 }
