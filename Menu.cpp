@@ -90,7 +90,7 @@ void Menu::masajistas(){
                 masajistaManager.cargarMasajista();
                 break;
             case 2:
-                cout << "Listado de masajistas" << endl;
+                masajistaManager.listarMasajistas();
                 break;
             case 3:
                 cout << "Modificar masajista" << endl;

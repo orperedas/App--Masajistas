@@ -33,4 +33,6 @@ class Masajista{
         void setDireccion(std::string direccion);
         void setTelefono(std::string telefono);
         void setEmail(std::string email);
+
+        std::string toCsv();
 };

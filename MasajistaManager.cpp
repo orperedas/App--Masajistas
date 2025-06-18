@@ -48,6 +48,21 @@ void MasajistaManager::cargarMasajista(){
     }
 }
 
+
+void MasajistaManager::listarMasajistas(){
+    MasajistaArchivo masArchivo;
+    Masajista registro;
+
+    int todoLosMasajistas = masArchivo.getCantidadMasajistas();
+
+    for(int i = 0; i < todoLosMasajistas; i++){
+        registro = masArchivo.leer(i);
+
+        cout << registro.toCsv() << endl;
+    }
+}
+
+
 void MasajistaManager::mostrarCantidadMasajistas(){
     MasajistaArchivo masArchivo;
 

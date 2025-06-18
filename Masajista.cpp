@@ -80,3 +80,16 @@ void Masajista::setTelefono(std::string telefono){
 void Masajista::setEmail(std::string email){
     strcpy(_email, email.c_str());
 }
+
+std::string Masajista::toCsv(){
+      string str = "";
+      str = string(_dni) + ",";
+      str += string(_nombre) + ",";
+      str += string(_apellido) + ",";
+      str += string(_cuit) + ",";
+      str += string(_direccion) + ",";
+      str += string(_telefono) + ",";
+      str += string(_email) + ",";
+
+      return str;
+   }

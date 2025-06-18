@@ -6,5 +6,6 @@ class MasajistaManager{
 
     public:
         void cargarMasajista();
+        void listarMasajistas();
         void mostrarCantidadMasajistas();
 };

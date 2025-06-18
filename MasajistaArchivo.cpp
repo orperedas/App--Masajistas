@@ -51,3 +51,22 @@ int MasajistaArchivo::getCantidadMasajistas(){
 
     return totalMasajistas;
 }
+
+
+Masajista MasajistaArchivo::leer(int posicion){
+    Masajista registro;
+    FILE *pFile;
+
+    pFile = fopen(_nombreArchivo.c_str(), "rb");
+
+    if(pFile == nullptr){
+        return registro;
+    }
+
+    fseek(pFile, sizeof(Masajista) * posicion, SEEK_SET);
+    fread(&registro, sizeof(Masajista), 1, pFile);
+
+    fclose(pFile);
+
+    return registro;
+}

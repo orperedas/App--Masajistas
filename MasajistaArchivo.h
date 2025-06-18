@@ -14,4 +14,6 @@ class MasajistaArchivo{
 
         bool guardar(Masajista registro);
         int getCantidadMasajistas();
+
+        Masajista leer(int posiciion);
 };
