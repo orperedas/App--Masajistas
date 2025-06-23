@@ -1,5 +1,6 @@
 #include "Masajista.h"
 
+#include <iostream>
 #include <cstring>
 
 using namespace std;
@@ -12,9 +13,10 @@ Masajista::Masajista(){
     strcpy(_direccion, "");
     strcpy(_telefono, "");
     strcpy(_email, "");
+    bool _estado;
 }
 
-Masajista::Masajista(std::string dni, std::string nombre, std::string apellido, std::string cuit, std::string direccion, std::string telefono, std::string email){
+Masajista::Masajista(std::string dni, std::string nombre, std::string apellido, std::string cuit, std::string direccion, std::string telefono, std::string email, bool estado){
     setDni(dni);
     setNombre(nombre);
     setApellido(apellido);
@@ -22,7 +24,9 @@ Masajista::Masajista(std::string dni, std::string nombre, std::string apellido, 
     setDireccion(direccion);
     setTelefono(telefono);
     setEmail(email);
+    setEstado(estado);
 }
+
 
 std::string Masajista::getDni(){
     return _dni;
@@ -50,6 +54,10 @@ std::string Masajista::getTelefono(){
 
 std::string Masajista::getEmail(){
     return _email;
+}
+
+bool Masajista::getEstado(){
+    return _estado;
 }
 
 
@@ -81,15 +89,45 @@ void Masajista::setEmail(std::string email){
     strcpy(_email, email.c_str());
 }
 
-std::string Masajista::toCsv(){
-      string str = "";
-      str = string(_dni) + ",";
-      str += string(_nombre) + ",";
-      str += string(_apellido) + ",";
-      str += string(_cuit) + ",";
-      str += string(_direccion) + ",";
-      str += string(_telefono) + ",";
-      str += string(_email) + ",";
+void Masajista::setEstado(bool estado){
+    _estado = estado;
+}
 
-      return str;
-   }
+std::string Masajista::enviarAcsv(){
+    string cadena = "";
+    cadena = string(_dni) + ",";
+    cadena += string(_nombre) + ",";
+    cadena += string(_apellido) + ",";
+    cadena += string(_cuit) + ",";
+    cadena += string(_direccion) + ",";
+    cadena += string(_telefono) + ",";
+    cadena += string(_email) + ",";
+    cadena += to_string(_estado);
+
+    return cadena;
+}
+
+
+std::string Masajista::mostrarEnPantalla(){
+    string cadena = "";
+    cadena = string(_dni) + "  ";
+    cadena += string(_nombre) + " ";
+    cadena += string(_apellido) + "  ";
+    cadena += string(_cuit) + "  ";
+    cadena += string(_direccion) + "  ";
+    cadena += string(_telefono) + "  ";
+    cadena += string(_email) + "  ";
+    cadena += to_string(_estado);
+
+    return cadena;
+}
+
+
+std::string Masajista::mostrarDniNombreMasajistas(){
+    string cadena = "";
+    cadena = string(_dni) + "  ";
+    cadena += string(_nombre) + " ";
+    cadena += string(_apellido);
+
+    return cadena;
+}

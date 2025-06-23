@@ -1,17 +1,15 @@
 #include <iostream>
+#include <locale.h>
 
-#include "MasajistaManager.h"
 #include "Menu.h"
 
 using namespace std;
 
 int main(){
+    setlocale(LC_CTYPE, "Spanish");
 
     Menu menu;
     menu.principal();
-
-    //MasajistaManager masajistaManager;
-    //masajistaManager.cargarMasajista();
 
     return 0;
 }

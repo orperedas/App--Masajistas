@@ -1,7 +1,7 @@
 # depslib dependency file v1.0
-1750104625 source:c:\users\otto pereda\onedrive\documentos\utn\tse tup 2024-2026\2025 - 2do cuatrimestre\programación ii\ti grupo 33\app_masajistas\main.cpp
+1750696974 source:c:\users\otto pereda\onedrive\documentos\utn\tse tup 2024-2026\2025 - 2do cuatrimestre\programación ii\ti grupo 33\app_masajistas\main.cpp
 	<iostream>
-	"MasajistaManager.h"
+	<locale.h>
 	"Menu.h"
 
 1749524406 source:c:\users\otto pereda\onedrive\documentos\utn\tse tup 2024-2026\2025 - 2do cuatrimestre\programación ii\ti grupo 33\app_masajistas\fecha.cpp
@@ -10,18 +10,20 @@
 1749523174 c:\users\otto pereda\onedrive\documentos\utn\tse tup 2024-2026\2025 - 2do cuatrimestre\programación ii\ti grupo 33\app_masajistas\fecha.h
 	<string>
 
-1750223907 source:c:\users\otto pereda\onedrive\documentos\utn\tse tup 2024-2026\2025 - 2do cuatrimestre\programación ii\ti grupo 33\app_masajistas\menu.cpp
+1750697152 source:c:\users\otto pereda\onedrive\documentos\utn\tse tup 2024-2026\2025 - 2do cuatrimestre\programación ii\ti grupo 33\app_masajistas\menu.cpp
 	<iostream>
+	<stdlib.h>
 	"Menu.h"
 	"MasajistaManager.h"
 
 1749736709 c:\users\otto pereda\onedrive\documentos\utn\tse tup 2024-2026\2025 - 2do cuatrimestre\programación ii\ti grupo 33\app_masajistas\menu.h
 
-1750225197 source:c:\users\otto pereda\onedrive\documentos\utn\tse tup 2024-2026\2025 - 2do cuatrimestre\programación ii\ti grupo 33\app_masajistas\masajista.cpp
+1750693760 source:c:\users\otto pereda\onedrive\documentos\utn\tse tup 2024-2026\2025 - 2do cuatrimestre\programación ii\ti grupo 33\app_masajistas\masajista.cpp
 	"Masajista.h"
+	<iostream>
 	<cstring>
 
-1750225196 c:\users\otto pereda\onedrive\documentos\utn\tse tup 2024-2026\2025 - 2do cuatrimestre\programación ii\ti grupo 33\app_masajistas\masajista.h
+1750693698 c:\users\otto pereda\onedrive\documentos\utn\tse tup 2024-2026\2025 - 2do cuatrimestre\programación ii\ti grupo 33\app_masajistas\masajista.h
 	<string>
 
 1749785561 source:c:\users\otto pereda\onedrive\documentos\utn\tse tup 2024-2026\2025 - 2do cuatrimestre\programación ii\ti grupo 33\app_masajistas\empresa.cpp
@@ -46,22 +48,30 @@
 1749871500 c:\users\otto pereda\onedrive\documentos\utn\tse tup 2024-2026\2025 - 2do cuatrimestre\programación ii\ti grupo 33\app_masajistas\tiposervicio.h
 	<string>
 
-1750225635 source:c:\users\otto pereda\onedrive\documentos\utn\tse tup 2024-2026\2025 - 2do cuatrimestre\programación ii\ti grupo 33\app_masajistas\masajistamanager.cpp
+1750693461 source:c:\users\otto pereda\onedrive\documentos\utn\tse tup 2024-2026\2025 - 2do cuatrimestre\programación ii\ti grupo 33\app_masajistas\masajistamanager.cpp
 	"Masajista.h"
 	"MasajistaArchivo.h"
 	"MasajistaManager.h"
 	<iostream>
 	<string>
 
-1750223907 c:\users\otto pereda\onedrive\documentos\utn\tse tup 2024-2026\2025 - 2do cuatrimestre\programación ii\ti grupo 33\app_masajistas\masajistamanager.h
+1750652210 c:\users\otto pereda\onedrive\documentos\utn\tse tup 2024-2026\2025 - 2do cuatrimestre\programación ii\ti grupo 33\app_masajistas\masajistamanager.h
 
-1750224769 c:\users\otto pereda\onedrive\documentos\utn\tse tup 2024-2026\2025 - 2do cuatrimestre\programación ii\ti grupo 33\app_masajistas\masajistaarchivo.h
+1750635022 c:\users\otto pereda\onedrive\documentos\utn\tse tup 2024-2026\2025 - 2do cuatrimestre\programación ii\ti grupo 33\app_masajistas\masajistaarchivo.h
 	"Masajista.h"
 	<string>
 
-1750224838 source:c:\users\otto pereda\onedrive\documentos\utn\tse tup 2024-2026\2025 - 2do cuatrimestre\programación ii\ti grupo 33\app_masajistas\masajistaarchivo.cpp
-	"MasajistaArchivo.h"
+1750695272 source:c:\users\otto pereda\onedrive\documentos\utn\tse tup 2024-2026\2025 - 2do cuatrimestre\programación ii\ti grupo 33\app_masajistas\masajistaarchivo.cpp
+	"headers/MasajistaArchivo.h"
 	"MasajistaManager.h"
 	<iostream>
 	<cstring>
+
+1750695301 c:\users\otto pereda\onedrive\documentos\utn\tse tup 2024-2026\2025 - 2do cuatrimestre\programación ii\ti grupo 33\app_masajistas\headers\masajistaarchivo.h
+	"../Masajista.h"
+	<string>
+
+1749736709 c:\users\otto pereda\onedrive\documentos\utn\tse tup 2024-2026\2025 - 2do cuatrimestre\programación ii\ti grupo 33\app_masajistas\headers\menu.h
+
+1750652210 c:\users\otto pereda\onedrive\documentos\utn\tse tup 2024-2026\2025 - 2do cuatrimestre\programación ii\ti grupo 33\app_masajistas\headers\masajistamanager.h
 

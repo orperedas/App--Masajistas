@@ -5,7 +5,12 @@ class MasajistaManager{
 
 
     public:
+        void buscarMasajista();
         void cargarMasajista();
+        void listarDnisNombres();
         void listarMasajistas();
+        void masajistasActivos();
+        void modificarEstadoMasajista();
         void mostrarCantidadMasajistas();
+
 };
