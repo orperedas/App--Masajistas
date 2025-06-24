@@ -13,7 +13,6 @@ Fecha::Fecha(int dia, int mes, int anio){
 }
 
 
-// GETTERS
 int Fecha::getDia(){
     return _dia;
 }
@@ -26,8 +25,6 @@ int Fecha::getAnio(){
     return _anio;
 }
 
-
-// SETTERS
 
 void Fecha::setDia(int dia){
     _dia = dia;
@@ -42,8 +39,6 @@ void Fecha::setAnio(int anio){
 }
 
 
-// CONVERTIR FECHA A CADENA
-
-std::string Fecha::toString(){
+std::string Fecha::convertirACadena(){
     return std::to_string(_dia) + "/" + std::to_string(_mes) + "/" + std::to_string(_anio);
 }

@@ -31,7 +31,7 @@ bool MasajistaArchivo::guardar(Masajista registro){
         return false;
     }
 
-    resultado = fwrite(&registro, sizeof(Masajista), 1, masArchivo);
+    resultado = fwrite(&registro, tamanioRegistro(), 1, masArchivo);
 
     fclose(masArchivo);
 
@@ -62,7 +62,7 @@ bool MasajistaArchivo::guardar(Masajista registro, int posicion){
 int MasajistaArchivo::buscar(std::string dniMasajista){
     FILE *masArchivo;
     Masajista registro;
-    int tamRegistro = tamanioRegistro();
+//    int tamRegistro = tamanioRegistro();
     int posicion = 0;
 
     masArchivo = fopen(_nombreArchivo.c_str(), "rb");
@@ -71,7 +71,7 @@ int MasajistaArchivo::buscar(std::string dniMasajista){
         return -1;
     }
 
-    while(fread(&registro, tamRegistro, 1, masArchivo) == 1){
+    while(fread(&registro, tamanioRegistro(), 1, masArchivo) == 1){
         if(registro.getDni() == dniMasajista){
             fclose(masArchivo);
             return posicion;
@@ -131,6 +131,8 @@ int MasajistaArchivo::getCantidadMasajistas(){
 Masajista MasajistaArchivo::leer(int posicion){
     Masajista registro;
 
+    int tamRegistro = tamanioRegistro();
+
     FILE *pFile;
     pFile = fopen(_nombreArchivo.c_str(), "rb");
 
@@ -138,8 +140,8 @@ Masajista MasajistaArchivo::leer(int posicion){
         return registro;
     }
 
-    fseek(pFile, sizeof(Masajista) * posicion, SEEK_SET);
-    fread(&registro, sizeof(Masajista), 1, pFile);
+    fseek(pFile, tamanioRegistro() * posicion, SEEK_SET);
+    fread(&registro, tamRegistro, 1, pFile);
 
     fclose(pFile);
 

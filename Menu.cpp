@@ -54,7 +54,7 @@ void Menu::principal(){
                 cout << "Saliendo del programa..." << endl;
                 break;
             default:
-                cout << "La opción ingresada no es válida. Intente de nuevo." << endl;
+                cout << "La opción ingresada es inválida. Intente de nuevo." << endl;
         }
 
         cout << endl;

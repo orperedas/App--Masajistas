@@ -81,7 +81,7 @@ void MasajistaManager::cargarMasajista(){
     cout << "Ingrese Apellido: ";
     cin >> apellido;
 
-    cuit = to_string(25 + rand() % 100) + dni + to_string(rand() % 10);
+    cuit = to_string(20 + rand() % 29) + dni + to_string(rand() % 10);
 
     cout << "Ingrese Dirección: ";
     cin.ignore();
@@ -99,11 +99,11 @@ void MasajistaManager::cargarMasajista(){
 
     if(masArchivo.guardar(registro)){
         cout << endl;
-        cout << "Nuevo masajista guardado con ‚xito." << endl;
+        cout << "Nuevo masajista guardado con éxito." << endl;
     }
     else{
         cout << endl;
-        cout << "Error inesperado, no se guard¢ el registro" << endl;
+        cout << "Error inesperado, no se guardó el registro" << endl;
     }
 
     cout << endl;
@@ -191,7 +191,7 @@ void MasajistaManager::modificarEstadoMasajista(){
         registro = masArchivo.leer(posicion);
         estado = registro.getEstado();
 
-        cout << "El estado acutal del masajista" << endl;
+        cout << "Estado acutal del masajista" << endl;
         cout << "  DNI: " << registro.getDni() << endl;
         cout << "  Nombre: " << registro.getNombre() << " " << registro.getApellido() << endl;
 
@@ -245,4 +245,3 @@ void MasajistaManager::mostrarCantidadMasajistas(){
     cout << endl;
     cout << "Cantidad total de masajistas en la empresa: " << cantidadMasajistas << endl;
 }
-

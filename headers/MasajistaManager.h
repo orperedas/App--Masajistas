@@ -12,5 +12,4 @@ class MasajistaManager{
         void masajistasActivos();
         void modificarEstadoMasajista();
         void mostrarCantidadMasajistas();
-
 };

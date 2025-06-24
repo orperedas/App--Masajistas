@@ -9,10 +9,11 @@ class TipoServicio{
         char _descripcion[200];
         char _modalidad[20];
         float _valorHora;
+        bool _estado;
 
     public:
         TipoServicio();
-        TipoServicio(int id, std::string nombre, std::string descripcion, std::string modalidad, float valorHora);
+        TipoServicio(int id, std::string nombre, std::string descripcion, std::string modalidad, float valorHora, bool estado);
 
         // Getters
         int getId();
@@ -20,6 +21,7 @@ class TipoServicio{
         std::string getDescripcion();
         std::string getModalidad();
         float getValorHora();
+        bool getEstado();
 
         // Setters
         void setId(int id);
@@ -27,4 +29,9 @@ class TipoServicio{
         void setDescripcion(std::string descripcion);
         void setModalidad(std::string modalidad);
         void setValorHora(float valorHora);
+        void setEstado(bool estado);
+
+        std::string enviarAcsv();
+        std::string mostrarEnPantalla();
+        std::string mostrarIdNombreTipo();
 };

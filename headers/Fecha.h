@@ -16,5 +16,5 @@ class Fecha{
         void setMes(int mes);
         void setAnio(int anio);
 
-        std::string toString();
+        std::string convertirACadena();
 };

@@ -1,23 +1,24 @@
 #pragma once
 
-#include "Masajista.h"
+#include "TipoServicio.h"
 
 #include <string>
 
-class MasajistaArchivo{
+class TipoServicioArchivo{
     private:
         std::string _nombreArchivo;
 
     public:
-        MasajistaArchivo();
-        MasajistaArchivo(std::string nombreArchivo);
+        TipoServicioArchivo();
+        TipoServicioArchivo(std::string nombreArchivo);
 
+        bool comprobarExisteArchivo();
         int tamanioRegistro();
-        bool guardar(Masajista registro);
-        bool guardar(Masajista registro, int posicion);
-        bool modificarEsstado(Masajista registro, int posicio);
-        int getCantidadMasajistas();
-        int buscar(std::string dniMasajista);
+        bool guardar(TipoServicio registro);
+        bool guardar(TipoServicio registro, int posicion);
+        bool modificarEsstado(TipoServicio registro, int posicio);
+        int getCantidadTipos();
+        int buscar(int idTipoServicio);
 
-        Masajista leer(int posiciion);
+        TipoServicio leer(int posiciion);
 };
