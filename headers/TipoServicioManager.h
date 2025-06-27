@@ -10,6 +10,7 @@ class TipoServicioManager{
         void listarIdsNombres();
         void listarTipoServicios();
         void TiposServiciosActivos();
-        void modificarEstadoTipoServicio();
+        void modificarEstado();
+        void modificarValorHora();
 
 };

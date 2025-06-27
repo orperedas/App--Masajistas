@@ -5,7 +5,7 @@
 #include <cstring>
 
 TipoServicioArchivo::TipoServicioArchivo(){
-    _nombreArchivo = "TiposServicios.dat";
+    _nombreArchivo = "files/TiposServicios.dat";
 }
 
 
@@ -13,29 +13,10 @@ TipoServicioArchivo::TipoServicioArchivo(std::string nombreArchivo){
     _nombreArchivo = nombreArchivo;
 }
 
-/*
-bool TipoServicioArchivo::comprobarExisteArchivo(){
-    const std::string nombreArchivo = _nombreArchivo.c_str();
-
-    std::ifstream archivoLectura(nombreArchivo, std::ios::binary);
-
-    if (!archivoLectura) {
-        // El archivo no existe, lo creamos vac�o
-        std::ofstream archivoNuevo(nombreArchivo, std::ios::binary);
-
-        if (archivoNuevo) {
-            std::cout << "Archivo 'servicios.dat' creado correctamente." << std::endl;
-        } else {
-            std::cerr << "Error: no se pudo crear el archivo 'servicios.dat'." << std::endl;
-        }
-    } else {
-        std::cout << "El archivo 'servicios.dat' ya existe." << std::endl;
-    }
-}
-*/
 
 int TipoServicioArchivo::tamanioRegistro(){
     int tamanio = sizeof(TipoServicio);
+    return tamanio;
 }
 
 

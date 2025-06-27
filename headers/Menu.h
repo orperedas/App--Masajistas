@@ -7,4 +7,5 @@ class Menu{
         void masajistas();
         void empresas();
         void servicios();
+        void tipoServicio();
 };

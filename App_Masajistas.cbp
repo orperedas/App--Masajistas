@@ -41,6 +41,7 @@
 			<Option target="Debug" />
 		</Unit>
 		<Unit filename="classes/TipoServicio.cpp" />
+		<Unit filename="classes/Validacion.cpp" />
 		<Unit filename="files/MasajistaArchivo.cpp" />
 		<Unit filename="files/TipoServicioArchivo.cpp" />
 		<Unit filename="headers/Empresa.h" />
@@ -53,6 +54,7 @@
 		<Unit filename="headers/TipoServicio.h" />
 		<Unit filename="headers/TipoServicioArchivo.h" />
 		<Unit filename="headers/TipoServicioManager.h" />
+		<Unit filename="headers/Validacion.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="managers/MasajistaManager.cpp" />
 		<Unit filename="managers/TipoServicioManager.cpp" />

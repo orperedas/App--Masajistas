@@ -53,12 +53,12 @@ std::string TipoServicio::enviarAcsv(){
 
 std::string TipoServicio::mostrarEnPantalla(){
     string cadena = "";
-    cadena = to_string(_id) + "  ";
-    cadena += string(_nombre) + "  ";
-    cadena += string(_descripcion) + "  ";
-    cadena += string(_modalidad) + "  ";
-    cadena = to_string(_valorHora) + "  ";
-    cadena = to_string(_estado);
+    cadena = to_string(_id) + " | ";
+    cadena += string(_nombre) + " | ";
+    cadena += string(_descripcion) + " | ";
+    cadena += string(_modalidad) + " | ";
+    cadena += to_string(_valorHora) + " | ";
+    cadena += to_string(_estado);
 
     return cadena;
 }
@@ -67,8 +67,7 @@ std::string TipoServicio::mostrarEnPantalla(){
 std::string TipoServicio::mostrarIdNombreTipo(){
     string cadena = "";
     cadena = to_string(_id) + "  ";
-    cadena += string(_nombre) + "  ";
-    cadena += string(_descripcion);
+    cadena += string(_nombre);
 
     return cadena;
 }

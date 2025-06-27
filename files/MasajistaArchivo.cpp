@@ -7,7 +7,7 @@
 using namespace std;
 
 MasajistaArchivo::MasajistaArchivo(){
-    _nombreArchivo = "masajistas.dat";
+    _nombreArchivo = "files/masajistas.dat";
 }
 
 MasajistaArchivo::MasajistaArchivo(std::string nombreArchivo){

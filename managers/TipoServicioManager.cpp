@@ -1,15 +1,19 @@
 #include "TipoServicio.h"
 #include "TipoServicioArchivo.h"
 #include "TipoServicioManager.h"
+#include "Validacion.h"
 
 #include <iostream>
 #include <string>
+#include <iomanip>
 
 using namespace std;
+
 
 void TipoServicioManager::buscarTipoServicio(){
     TipoServicioArchivo tsArchivo;
     TipoServicio registro;
+//    Validacion validador;
 
     int id, posicion;
 
@@ -27,6 +31,7 @@ void TipoServicioManager::buscarTipoServicio(){
     }
 
     cout << endl;
+
     cout << "Ingrese el ID del tipo de servicio: ";
     cin >> id;
 
@@ -39,13 +44,14 @@ void TipoServicioManager::buscarTipoServicio(){
         cout << "Datos del tipo de servicio" << endl;
         cout << endl;
         cout << "Clave                Valor" << endl;
-        cout << "-------------------  ------------------------" << endl;
-        cout << "id:                 " << registro.getId() << endl;
-        cout << "Nombre:              " << registro.getNombre() << endl;
-        cout << "Apellido:            " << registro.getDescripcion() << endl;
-        cout << "Dirección:           " << registro.getModalidad() << endl;
-        cout << "Teléfono:            " << registro.getValorHora() << endl;
-        cout << "Correo electrónico:  " << registro.getEstado() << endl;
+        cout << "---------------  ------------------------" << endl;
+        cout << "id:              " << registro.getId() << endl;
+        cout << "Nombre:          " << registro.getNombre() << endl;
+        cout << "DescripciÃ³n:     " << registro.getDescripcion() << endl;
+        cout << "Modalidad:       " << registro.getModalidad() << endl;
+        cout << "Valor por hora:  ";
+        cout << std::fixed << std::setprecision(2) << registro.getValorHora() << endl;
+        cout << "Estado:          " << registro.getEstado() << endl;
 
         if(registro.getEstado() == true){
             cout << "Estado:              Activo" << endl;
@@ -73,15 +79,14 @@ void TipoServicioManager::cargarTipoServicio(){
     float valorHora;
     bool estado;
 
-    cout << "Ingrese id: ";
-    cin >> id;
+    id = tsArchivo.getCantidadTipos() + 1;
 
     cout << "Ingrese Nombre: ";
     cin.ignore();
     getline(cin, nombre);
 
-    cout << "Ingrese descripción: ";
-    cin >> descripcion;
+    cout << "Ingrese descripciÃ³n: ";
+    getline(cin, descripcion);
 
     cout << "Ingrese modalidad: ";
     cin >> modalidad;
@@ -95,11 +100,11 @@ void TipoServicioManager::cargarTipoServicio(){
 
     if(tsArchivo.guardar(registro)){
         cout << endl;
-        cout << "Nuevo Tipo de Servicio guardado con éxito." << endl;
+        cout << "Nuevo Tipo de Servicio guardado con Ã©xito." << endl;
     }
     else{
         cout << endl;
-        cout << "Error inesperado, no se guardó el registro" << endl;
+        cout << "Error inesperado, no se guardÃ³ el registro" << endl;
     }
 
     cout << endl;
@@ -138,16 +143,17 @@ void TipoServicioManager::TiposServiciosActivos(){
     bool estado;
 
     if(todoLosTipos > 0){
+        cout << "Tipos de Servicios Activos:" << endl;
+        cout << "---------------------------" << endl;
         for(int i = 0; i < todoLosTipos; i++){
             registro = tsArchivo.leer(i);
             estado = registro.getEstado();
 
             if(estado == true){
-                cout << registro.getId() << " ";
-                cout << registro.getNombre() << " ";
-                cout << registro.getDescripcion() << ": ";
-                cout << registro.getModalidad() << ": ";
-                cout << registro.getValorHora() << ": ";
+                cout << registro.getId() << "   ";
+                cout << registro.getNombre() << "   ";
+                cout << registro.getModalidad() << "   ";
+                cout << registro.getValorHora() << endl;
 
                 cantidadActivos ++;
             }
@@ -166,7 +172,7 @@ void TipoServicioManager::TiposServiciosActivos(){
 }
 
 
-void TipoServicioManager::modificarEstadoTipoServicio(){
+void TipoServicioManager::modificarEstado(){
     TipoServicioArchivo tsArchivo;
     TipoServicio registro;
 
@@ -204,7 +210,63 @@ void TipoServicioManager::modificarEstadoTipoServicio(){
 
         if (tsArchivo.guardar(registro, posicion)){
             cout << endl;
-            cout << "Estado modificado y registro guardado con éxito." << endl;
+            cout << "Estado modificado y registro guardado con Ã©xito." << endl;
+        }
+        else{
+            cout << endl;
+            cout << "Ha ocurrido un error al intentar modificar el registro." << endl;
+        }
+
+    }
+    else{
+        if (posicion == -1){
+            cout << endl;
+            cout << "No existe el ID buscado." << endl;
+        }
+        else{
+            if (posicion == -2){
+                cout << endl;
+                cout << "No se ha encontrado el archivo." << endl;
+            }
+        }
+    }
+
+    cout << endl;
+    system("pause");
+}
+
+
+void TipoServicioManager::modificarValorHora(){
+    TipoServicioArchivo tsArchivo;
+    TipoServicio registro;
+
+    int id, posicion;
+    float valorHora;
+
+    registro.mostrarIdNombreTipo();
+
+    cout << "Ingrese el ID del tipo de servicio a modificar: ";
+    cin >> id;
+
+    posicion = tsArchivo.buscar(id);
+
+    if(posicion >= 0){
+        registro = tsArchivo.leer(posicion);
+
+        cout << "Valor por hora actual para:" << endl;
+        cout << "  id: " << registro.getId() << endl;
+        cout << "  Nombre: " << registro.getNombre() << endl;
+        cout << "  Valor por hora: " << registro.getValorHora() << endl;
+
+        cout << endl;
+        cout << "Ingrese el nuevo valor por hora: ";
+        cin >> valorHora;
+
+        registro.setValorHora(valorHora);
+
+        if (tsArchivo.guardar(registro, posicion)){
+            cout << endl;
+            cout << "Valor por hora y registro actualizados con Ã©xito." << endl;
         }
         else{
             cout << endl;

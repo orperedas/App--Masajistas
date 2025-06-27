@@ -3,6 +3,7 @@
 
 #include "Menu.h"
 #include "MasajistaManager.h"
+#include "TipoServicioManager.h"
 
 using namespace std;
 
@@ -11,8 +12,8 @@ void Menu::cabeceraMenu(){
     cout << "=================================================" << endl;
     cout << "                 App Masajistas                  " << endl;
     cout << "-------------------------------------------------" << endl;
-    cout << "    Sistema de gestión de servicios de masaje    " << endl;
-    cout << "            alta, modificación y baja            " << endl;
+    cout << "    Sistema de gestiÃ³n de servicios de masaje    " << endl;
+    cout << "            alta, modificaciÃ³n y baja            " << endl;
     cout << "       de masajistas, empresas y servicios       " << endl;
     cout << "-------------------------------------------------" << endl;
     cout << endl;
@@ -25,7 +26,7 @@ void Menu::principal(){
     do{
         Menu::cabeceraMenu();
 
-        cout << "  ----- MENÚ PRINCIPAL -----" << endl;
+        cout << "  ----- MENÃš PRINCIPAL -----" << endl;
         cout << endl;
         cout << "  1. Masajistas" << endl;
         cout << "  2. Empresas" << endl;
@@ -35,7 +36,7 @@ void Menu::principal(){
         cout << endl;
         cout << "=================================================" << endl;
         cout << endl;
-        cout << "     Ingrese una opción para continuar:  ";
+        cout << "     Ingrese una opciâ‰¤n para continuar:  ";
         cin >> opcion;
         cout << endl;
 
@@ -54,7 +55,7 @@ void Menu::principal(){
                 cout << "Saliendo del programa..." << endl;
                 break;
             default:
-                cout << "La opción ingresada es inválida. Intente de nuevo." << endl;
+                cout << "La opciÃ³n ingresada no es vÃ¡lida. Intente de nuevo." << endl;
         }
 
         cout << endl;
@@ -72,7 +73,7 @@ void Menu::masajistas(){
     do{
         Menu::cabeceraMenu();
 
-        cout << "  ----- MENÚ MASAJISTAS -----" << endl;
+        cout << "  ----- MENÃš MASAJISTAS -----" << endl;
         cout << endl;
         cout << "    1. Agregar masajista" << endl;
         cout << "    2. Modificar estado de un masajista" << endl;
@@ -80,11 +81,11 @@ void Menu::masajistas(){
         cout << "    4. Listar todos los masajistas" << endl;
         cout << "    5. Mostrar masajistas activos" << endl;
         cout << endl;
-        cout << "    0. Volver al Menú Principal" << endl;
+        cout << "    0. Volver al MenÃº Principal" << endl;
         cout << endl;
         cout << "=================================================" << endl;
         cout << endl;
-        cout << "     Ingrese una opción para continuar:  ";
+        cout << "     Ingrese una opciÃ³n para continuar:  ";
         cin >> opcion;
         cout << endl;
 
@@ -106,10 +107,10 @@ void Menu::masajistas(){
                 masajistaManager.masajistasActivos();
                 break;
             case 0:
-                cout << "Volviendo al menú principal..." << endl;
+                cout << "Volviendo al menÃº principal..." << endl;
                 break;
             default:
-                cout << "La opción ingresada es inválida. Intente de nuevo." << endl;
+                cout << "La opciÃ³n ingresada no es vÃ¡lida. Intente de nuevo." << endl;
         }
 
         cout << endl;
@@ -125,18 +126,18 @@ void Menu::empresas(){
     do{
         Menu::cabeceraMenu();
 
-        cout << "  ----- MENÚ EMPRESAS -----" << endl;
+        cout << "  ----- MENÃš EMPRESAS -----" << endl;
         cout << endl;
         cout << "    1. Listar empresa" << endl;
         cout << "    2. Agregar empresa" << endl;
         cout << "    3. Modificar empresa" << endl;
         cout << "    4. Eliminar empresa" << endl;
         cout << endl;
-        cout << "    0. Volver al Menú Principal" << endl;
+        cout << "    0. Volver al MenÃº Principal" << endl;
         cout << endl;
         cout << "=================================================" << endl;
         cout << endl;
-        cout << "     Ingrese una opción para continuar:  ";
+        cout << "     Ingrese una opciÃ³n para continuar:  ";
         cin >> opcion;
         cout << endl;
 
@@ -155,10 +156,10 @@ void Menu::empresas(){
                 cout << "Eliminar empresa" << endl;
                 break;
             case 0:
-                cout << "Volviendo al menú principal..." << endl;
+                cout << "Volviendo al menÃº principal..." << endl;
                 break;
             default:
-                cout << "La opción ingresada es inválida. Intente de nuevo." << endl;
+                cout << "La opciÃ³n ingresada no es valida. Intente de nuevo." << endl;
         }
 
         cout << endl;
@@ -174,40 +175,44 @@ void Menu::servicios(){
     do{
         Menu::cabeceraMenu();
 
-        cout << "  ----- MENÚ SERVICIOS -----" << endl;
+        cout << "  ----- MENÃš SERVICIOS -----" << endl;
         cout << endl;
-        cout << "    1. Listar servicios" << endl;
-        cout << "    2. Agregar servicio" << endl;
-        cout << "    3. Modificar servicio" << endl;
-        cout << "    4. Eliminar servicio" << endl;
+        cout << "    1. Agregar servicio" << endl;
+        cout << "    2. Modificar estado de servicio" << endl;
+        cout << "    3. Cambiar masajista de servicio" << endl;
+        cout << "    4. Listar servicios" << endl;
+        cout << "    5. Tipos de Servicios" << endl;
         cout << endl;
-        cout << "    0. Volver al Menú Principal" << endl;
+        cout << "    0. Volver al MenÃº Principal" << endl;
         cout << endl;
         cout << "=================================================" << endl;
         cout << endl;
-        cout << "     Ingrese una opción para continuar:  ";
+        cout << "     Ingrese una opciÃ³n para continuar:  ";
         cin >> opcion;
         cout << endl;
 
 
         switch (opcion) {
             case 1:
-                cout << "Listado de servicios" << endl;
+                cout << "Agregar servicio" << endl;
                 break;
             case 2:
-                cout << "Agregrar servicio" << endl;
+                cout << "Modificar estado de servicio" << endl;
                 break;
             case 3:
-                cout << "Modificar servicio" << endl;
+                cout << "Cambiar masajista de servicio" << endl;
                 break;
             case 4:
-                cout << "Eliminar servicio" << endl;
+                cout << "Listar servicios" << endl;
+                break;
+            case 5:
+                Menu::tipoServicio();
                 break;
             case 0:
-                cout << "Volviendo al menú principal..." << endl;
+                cout << "Volviendo al menÂ· principal..." << endl;
                 break;
             default:
-                cout << "La opción ingresada es inválida. Intente de nuevo." << endl;
+                cout << "La opciÃ³n ingresada no es vÃ¡lida. Intente de nuevo." << endl;
         }
 
         cout << endl;
@@ -215,3 +220,65 @@ void Menu::servicios(){
     }
     while (opcion != 0);
 }
+
+
+void Menu::tipoServicio(){
+    int opcion;
+
+    TipoServicioManager tipoServicioManager;
+
+    do{
+        Menu::cabeceraMenu();
+
+        cout << "  ----- MENÃš SERVICIOS -----" << endl;
+        cout << endl;
+        cout << "    1. Agregar tipo de servicio" << endl;
+        cout << "    2. Buscar tipo de servicio" << endl;
+        cout << "    3. Listar todos los tipos de servicio" << endl;
+        cout << "    4. Listar tipos de servicios activos" << endl;
+        cout << endl;
+        cout << "    Modifica tipo de servicio:" << endl;
+        cout << "        5. Modificar estado" << endl;
+        cout << "        6. Modificar valor por hora" << endl;
+        cout << endl;
+        cout << "    0. Volver al MenÃº Principal" << endl;
+        cout << endl;
+        cout << "=================================================" << endl;
+        cout << endl;
+        cout << "     Ingrese una opciÃ³n para continuar:  ";
+        cin >> opcion;
+        cout << endl;
+
+
+        switch (opcion) {
+            case 1:
+                tipoServicioManager.cargarTipoServicio();
+                break;
+            case 2:
+                tipoServicioManager.buscarTipoServicio();
+                break;
+            case 3:
+                tipoServicioManager.listarTipoServicios();
+                break;
+            case 4:
+                tipoServicioManager.TiposServiciosActivos();
+                break;
+            case 5:
+                tipoServicioManager.modificarEstado();
+                break;
+            case 6:
+                tipoServicioManager.modificarValorHora();
+                break;
+            case 0:
+                cout << "Volviendo al menÂ· principal..." << endl;
+                break;
+            default:
+                cout << "La opciÃ³n ingresada no es vÃ¡lida. Intente de nuevo." << endl;
+        }
+
+        cout << endl;
+
+    }
+    while (opcion != 0);
+}
+

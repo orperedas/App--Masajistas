@@ -1,6 +1,7 @@
 #include "Masajista.h"
 #include "MasajistaArchivo.h"
 #include "MasajistaManager.h"
+#include "Validacion.h"
 
 #include <iostream>
 #include <string>
@@ -68,11 +69,12 @@ void MasajistaManager::buscarMasajista(){
 void MasajistaManager::cargarMasajista(){
     MasajistaArchivo masArchivo;
     Masajista registro;
+//    Validacion validador;
 
     string dni, nombre, apellido, cuit, direccion, telefono, email;
     bool estado;
 
-    cout << "Ingrese DNI: ";
+    cout << "Ingrese el DNI del masajista: ";
     cin >> dni;
 
     cout << "Ingrese Nombre: ";
@@ -81,7 +83,8 @@ void MasajistaManager::cargarMasajista(){
     cout << "Ingrese Apellido: ";
     cin >> apellido;
 
-    cuit = to_string(20 + rand() % 29) + dni + to_string(rand() % 10);
+    cout << "ingrese el CUIT: ";
+    cin >> cuit;
 
     cout << "Ingrese Dirección: ";
     cin.ignore();

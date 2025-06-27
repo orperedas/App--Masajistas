@@ -1,0 +1,122 @@
+#include <iostream>
+#include <cstring>
+#include <cctype>
+
+using namespace std;
+
+class Validaciones {
+public:
+    // --- Utilidades internas ---
+
+    bool esSoloDigitos(const char* str, int longitudEsperada) {
+        if (strlen(str) != longitudEsperada) {
+            cerr << "Error: debe tener exactamente " << longitudEsperada << " dígitos." << endl;
+            return false;
+        }
+        for (int i = 0; str[i]; i++) {
+            if (!isdigit(str[i])) {
+                cerr << "Error: debe contener solo caracteres numéricos." << endl;
+                return false;
+            }
+        }
+        return true;
+    }
+
+    bool esSoloLetras(const char* str) {
+        for (int i = 0; str[i]; i++) {
+            if (!isalpha(str[i])) {
+                cerr << "Error: solo se permiten letras." << endl;
+                return false;
+            }
+        }
+        return true;
+    }
+
+    bool empiezaConMayuscula(const char* str) {
+        if (!isupper(str[0])) {
+            cerr << "Error: debe comenzar con letra mayúscula." << endl;
+            return false;
+        }
+        return true;
+    }
+
+    bool esImprimible(const char* str) {
+        for (int i = 0; str[i]; i++) {
+            if (!isprint(str[i])) {
+                cerr << "Error: contiene caracteres no imprimibles." << endl;
+                return false;
+            }
+        }
+        return true;
+    }
+
+    bool contieneArrobaYPunto(const char* str) {
+        const char* at = strchr(str, '@');
+        if (!at) {
+            cerr << "Error: falta el carácter '@' en el email." << endl;
+            return false;
+        }
+        const char* punto = strchr(at, '.');
+        if (!punto) {
+            cerr << "Error: el email debe contener un '.' después del '@'." << endl;
+            return false;
+        }
+        return true;
+    }
+
+    // --- Validaciones específicas ---
+
+    bool validarDNI(const char* dni) {
+        cout << "Validando DNI..." << endl;
+        return esSoloDigitos(dni, 8);
+    }
+
+    bool validarNombreApellido(const char* texto, const char* campo) {
+        cout << "Validando " << campo << "..." << endl;
+        bool valido = true;
+        if (!esSoloLetras(texto)) valido = false;
+        if (!empiezaConMayuscula(texto)) valido = false;
+        return valido;
+    }
+
+    bool validarCUIT(const char* cuit) {
+        cout << "Validando CUIT..." << endl;
+        return esSoloDigitos(cuit, 11);
+    }
+
+    bool validarDireccion(const char* direccion) {
+        cout << "Validando dirección..." << endl;
+        int len = strlen(direccion);
+        if (len == 0 || len >= 50) {
+            cerr << "Error: longitud de dirección inválida." << endl;
+            return false;
+        }
+        return esImprimible(direccion);
+    }
+
+    bool validarTelefono(const char* telefono) {
+        cout << "Validando teléfono..." << endl;
+        return esSoloDigitos(telefono, 11);
+    }
+
+    bool validarEmail(const char* email) {
+        cout << "Validando email..." << endl;
+        return contieneArrobaYPunto(email);
+    }
+
+    bool validarHoras(int horas) {
+        if (horas < 2 || horas > 10) {
+            std::cerr << "Error: Las horas deben estar entre 2 y 10.\n";
+            return false;
+        }
+        return true;
+    }
+
+    bool validarValorHora(float valorHora) {
+        if (valorHora < 1000.0f || valorHora > 100000.0f) {
+            std::cerr << "Error: El valor por hora debe estar entre 1000 y 100000.\n";
+            return false;
+        }
+        return true;
+    }
+};
