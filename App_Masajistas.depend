@@ -82,11 +82,11 @@
 1750734388 c:\users\otto pereda\onedrive\documentos\utn\tse tup 2024-2026\2025 - 2do cuatrimestre\programación ii\ti grupo 33\app_masajistas_2\app_masajistas\headers\empresa.h
 	<string>
 
-1751094097 source:c:\users\otto pereda\onedrive\documentos\utn\tse tup 2024-2026\2025 - 2do cuatrimestre\programación ii\ti grupo 33\app_masajistas\classes\empresa.cpp
+1751147467 source:c:\users\otto pereda\onedrive\documentos\utn\tse tup 2024-2026\2025 - 2do cuatrimestre\programación ii\ti grupo 33\app_masajistas\classes\empresa.cpp
 	"Empresa.h"
 	<cstring>
 
-1751094027 c:\users\otto pereda\onedrive\documentos\utn\tse tup 2024-2026\2025 - 2do cuatrimestre\programación ii\ti grupo 33\app_masajistas\headers\empresa.h
+1751148628 c:\users\otto pereda\onedrive\documentos\utn\tse tup 2024-2026\2025 - 2do cuatrimestre\programación ii\ti grupo 33\app_masajistas\headers\empresa.h
 	<string>
 
 1750732790 source:c:\users\otto pereda\onedrive\documentos\utn\tse tup 2024-2026\2025 - 2do cuatrimestre\programación ii\ti grupo 33\app_masajistas\classes\fecha.cpp
@@ -184,8 +184,7 @@
 	<cstring>
 	<cctype>
 
-1751092296 source:c:\users\otto pereda\onedrive\documentos\utn\tse tup 2024-2026\2025 - 2do cuatrimestre\programación ii\ti grupo 33\app_masajistas\files\empresaarchivo.cpp
-	"Empresa.h"
+1751148343 source:c:\users\otto pereda\onedrive\documentos\utn\tse tup 2024-2026\2025 - 2do cuatrimestre\programación ii\ti grupo 33\app_masajistas\files\empresaarchivo.cpp
 	"EmpresaArchivo.h"
 	"EmpresaManager.h"
 	<iostream>
@@ -197,7 +196,7 @@
 
 1751081560 c:\users\otto pereda\onedrive\documentos\utn\tse tup 2024-2026\2025 - 2do cuatrimestre\programación ii\ti grupo 33\app_masajistas\headers\empresamanager.h
 
-1751089446 source:c:\users\otto pereda\onedrive\documentos\utn\tse tup 2024-2026\2025 - 2do cuatrimestre\programación ii\ti grupo 33\app_masajistas\managers\empresamanager.cpp
+1751148684 source:c:\users\otto pereda\onedrive\documentos\utn\tse tup 2024-2026\2025 - 2do cuatrimestre\programación ii\ti grupo 33\app_masajistas\managers\empresamanager.cpp
 	"Empresa.h"
 	"EmpresaArchivo.h"
 	"EmpresaManager.h"

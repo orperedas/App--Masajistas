@@ -1,4 +1,3 @@
-#include "Empresa.h"
 #include "EmpresaArchivo.h"
 #include "EmpresaManager.h"
 
@@ -18,26 +17,28 @@ EmpresaArchivo::EmpresaArchivo(std::string nombreArchivo){
 
 
 int EmpresaArchivo::tamanioRegistro(){
-    return sizeof(Empresa);
+    int tamanio = sizeof(Empresa);
+    return tamanio;
 }
 
 
 int EmpresaArchivo::getCantidadEmpresas(){
-    int tamanioArchivo, cantidadEmpresas;
+    int tamanioArchivo, tamRegistro, cantidadEmpresas;
 
-    FILE *pArchivo;
-    pArchivo = fopen(_nombreArchivo.c_str(), "rb");
+    FILE *emPArchivo;
+    emPArchivo = fopen(_nombreArchivo.c_str(), "rb");
 
-    if(pArchivo == nullptr){
+    if(emPArchivo == nullptr){
         return 0;
     }
 
-    fseek(pArchivo, 0, SEEK_SET);
+    fseek(emPArchivo, 0, SEEK_END);
 
-    tamanioArchivo = ftell(pArchivo);
-    cantidadEmpresas = tamanioArchivo / tamanioRegistro();
+    tamanioArchivo = ftell(emPArchivo);
+    tamRegistro = tamanioRegistro();
+    cantidadEmpresas = tamanioArchivo / tamRegistro;
 
-    fclose(pArchivo);
+    fclose(emPArchivo);
 
     return cantidadEmpresas;
 }
@@ -46,6 +47,7 @@ int EmpresaArchivo::getCantidadEmpresas(){
 int EmpresaArchivo::buscar(int idEmpresa){
     Empresa registrio;
     int posicion = 0;
+    int tamRegistro = tamanioRegistro();
 
     FILE *pArchivo;
     pArchivo = fopen(_nombreArchivo.c_str(), "rb");
@@ -54,7 +56,7 @@ int EmpresaArchivo::buscar(int idEmpresa){
         return 0;
     }
 
-    while(fread(&registrio, tamanioRegistro(), 1, pArchivo)){
+    while(fread(&registrio, tamRegistro, 1, pArchivo)){
         if(registrio.getId() == idEmpresa){
             fclose(pArchivo);
             return posicion;
@@ -72,6 +74,7 @@ int EmpresaArchivo::buscar(int idEmpresa){
 
 bool EmpresaArchivo::guardar(Empresa registro){
     bool resultado;
+    int tamRegistro = tamanioRegistro();
 
     FILE *pArchivo;
     pArchivo = fopen(_nombreArchivo.c_str(), "ab");
@@ -80,7 +83,7 @@ bool EmpresaArchivo::guardar(Empresa registro){
         return 0;
     }
 
-    resultado = fwrite(&registro, tamanioRegistro(), 1, pArchivo);
+    resultado = fwrite(&registro, tamRegistro, 1, pArchivo);
 
     fclose(pArchivo);
 

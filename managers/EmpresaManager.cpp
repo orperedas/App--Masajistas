@@ -42,8 +42,7 @@ void EmpresaManager::buscar(){
         cout << "Nombre:              " << registro.getNombre() << endl;
         cout << "Dirección:           " << registro.getDireccion() << endl;
         cout << "Teléfono:            " << registro.getTelefono() << endl;
-        cout << "Correo electrónico:  " << registro.getTelefono() << endl;
-        cout << "Estado:              " << registro.getEstado() << endl;
+        cout << "Correo electrónico:  " << registro.getEmail() << endl;
 
         if(registro.getEstado() == true){
             cout << "Estado:              Activo" << endl;
@@ -70,7 +69,7 @@ void EmpresaManager::cargar(){
     string nombre, cuit, direccion, telefono, email;
     bool estado;
 
-    id = empArchivo.getCantidadEmpresas();
+    id = empArchivo.getCantidadEmpresas() + 1;
 
     cout << "Ingrese Nombre: ";
     cin.ignore();
@@ -87,7 +86,8 @@ void EmpresaManager::cargar(){
     cin >> telefono;
 
     cout << "Ingrese email: ";
-    cin >> email;
+    cin.ignore();
+    getline(cin, email);
 
     estado = true;
 
@@ -260,15 +260,168 @@ void EmpresaManager::modificarEstado(){
 
 
 void EmpresaManager::modificarDireccion(){
+    EmpresaArchivo empArchivo;
+    Empresa registro;
 
+    int id, posicion;
+    std::string direccion;
+
+    registro.mostrarIdNombre();
+
+    cout << "Ingrese el ID del tipo de servicio a modificar: ";
+    cin >> id;
+
+    posicion = empArchivo.buscar(id);
+
+    if(posicion >= 0){
+        registro = empArchivo.leer(posicion);
+
+        cout << "Valor por hora actual para:" << endl;
+        cout << "  id: " << registro.getId() << endl;
+        cout << "  Nombre: " << registro.getNombre() << endl;
+        cout << "  Valor por hora: " << registro.getDireccion() << endl;
+
+        cout << endl;
+        cout << "Ingrese el nuevo valor por hora: ";
+        cin >> direccion;
+
+        registro.setDireccion(direccion);
+
+        if (empArchivo.guardar(registro, posicion)){
+            cout << endl;
+            cout << "Valor por hora y registro actualizados con éxito." << endl;
+        }
+        else{
+            cout << endl;
+            cout << "Ha ocurrido un error al intentar modificar el registro." << endl;
+        }
+
+    }
+    else{
+        if (posicion == -1){
+            cout << endl;
+            cout << "No existe el ID buscado." << endl;
+        }
+        else{
+            if (posicion == -2){
+                cout << endl;
+                cout << "No se ha encontrado el archivo." << endl;
+            }
+        }
+    }
+
+    cout << endl;
+    system("pause");
 }
 
 
 void EmpresaManager::modificarTelefono(){
+    EmpresaArchivo empArchivo;
+    Empresa registro;
 
+    int id, posicion;
+    std::string telefono;
+
+    registro.mostrarIdNombre();
+
+    cout << "Ingrese el ID del tipo de servicio a modificar: ";
+    cin >> id;
+
+    posicion = empArchivo.buscar(id);
+
+    if(posicion >= 0){
+        registro = empArchivo.leer(posicion);
+
+        cout << "Valor por hora actual para:" << endl;
+        cout << "  id: " << registro.getId() << endl;
+        cout << "  Nombre: " << registro.getNombre() << endl;
+        cout << "  Valor por hora: " << registro.getTelefono() << endl;
+
+        cout << endl;
+        cout << "Ingrese el nuevo valor por hora: ";
+        cin >> telefono;
+
+        registro.setTelefono(telefono);
+
+        if (empArchivo.guardar(registro, posicion)){
+            cout << endl;
+            cout << "Valor por hora y registro actualizados con éxito." << endl;
+        }
+        else{
+            cout << endl;
+            cout << "Ha ocurrido un error al intentar modificar el registro." << endl;
+        }
+
+    }
+    else{
+        if (posicion == -1){
+            cout << endl;
+            cout << "No existe el ID buscado." << endl;
+        }
+        else{
+            if (posicion == -2){
+                cout << endl;
+                cout << "No se ha encontrado el archivo." << endl;
+            }
+        }
+    }
+
+    cout << endl;
+    system("pause");
 }
 
 
 void EmpresaManager::modificarEmail(){
+    EmpresaArchivo empArchivo;
+    Empresa registro;
 
+    int id, posicion;
+    std::string email;
+
+    registro.mostrarIdNombre();
+
+    cout << "Ingrese el ID del tipo de servicio a modificar: ";
+    cin >> id;
+
+    posicion = empArchivo.buscar(id);
+
+    if(posicion >= 0){
+        registro = empArchivo.leer(posicion);
+
+        cout << "Valor por hora actual para:" << endl;
+        cout << "  id: " << registro.getId() << endl;
+        cout << "  Nombre: " << registro.getNombre() << endl;
+        cout << "  Valor por hora: " << registro.getEmail() << endl;
+
+        cout << endl;
+        cout << "Ingrese el nuevo valor por hora: ";
+        cin >> email;
+
+        registro.setEmail(email);
+
+        if (empArchivo.guardar(registro, posicion)){
+            cout << endl;
+            cout << "Valor por hora y registro actualizados con éxito." << endl;
+        }
+        else{
+            cout << endl;
+            cout << "Ha ocurrido un error al intentar modificar el registro." << endl;
+        }
+
+    }
+    else{
+        if (posicion == -1){
+            cout << endl;
+            cout << "No existe el ID buscado." << endl;
+        }
+        else{
+            if (posicion == -2){
+                cout << endl;
+                cout << "No se ha encontrado el archivo." << endl;
+            }
+        }
+    }
+
+    cout << endl;
+    system("pause");
 }

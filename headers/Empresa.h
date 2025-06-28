@@ -6,7 +6,7 @@ class Empresa{
     private:
         int _id;
         char _nombre[30];
-        char _cuit[11];
+        char _cuit[19];
         char _direccion[50];
         char _telefono[15];
         char _email[50];

@@ -5,13 +5,13 @@
 using namespace std;
 
 Empresa::Empresa(){
-    int _id = 0;
-    char _nombre[20];
-    char _cuit[11];
-    char _direccion[50];
-    char _telefono[15];
-    char _email[50];
-    bool _estado;
+    _id = 0;
+    strcpy(_nombre, "");
+    strcpy(_cuit, "");
+    strcpy(_direccion, "");
+    strcpy(_telefono, "");
+    strcpy(_email, "");
+    _estado;
 }
 
 Empresa::Empresa(int id, std::string nombre, std::string cuit, std::string direccion, std::string telefono, std::string email, bool estado){
@@ -105,7 +105,7 @@ std::string Empresa::mostrarEnPantalla(){
     cadena += string(_direccion) + " | ";
     cadena += string(_telefono) + " | ";
     cadena += string(_email) + " | ";
-    cadena += to_string(_estado) + "\n";
+    cadena += to_string(_estado);
 
     return cadena;
 }
@@ -114,7 +114,7 @@ std::string Empresa::mostrarEnPantalla(){
 std::string Empresa::mostrarIdNombre(){
     string cadena = "";
     cadena = to_string(_id) + "  ";
-    cadena += string(_nombre) + "\n";
+    cadena += string(_nombre);
 
     return cadena;
 }

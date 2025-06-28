@@ -137,6 +137,7 @@ void Menu::empresas(){
         cout << "    3. Listado de todas las empresas" << endl;
         cout << "    4. Listado de empresas activas" << endl;
         cout << endl;
+        cout << "    5. ir a Sedes" << endl;
         cout << "    Modificar Empresa:" << endl;
         cout << "        5. Modificar estado" << endl;
         cout << "        6. Modificar dirección" << endl;
@@ -179,6 +180,68 @@ void Menu::empresas(){
 
     }
     while (opcion != 0);
+}
+
+
+void Menu::sedes(){
+    int opcion;
+
+    EmpresaManager empresaManager;
+
+    do{
+        Menu::cabeceraMenu();
+
+        cout << "  ----- MENÚ EMPRESAS -----" << endl;
+        cout << endl;
+        cout << "    1. Agregar nueva empresa" << endl;
+        cout << "    2. Buscar empresa" << endl;
+        cout << "    3. Listado de todas las empresas" << endl;
+        cout << "    4. Listado de empresas activas" << endl;
+        cout << endl;
+        cout << "    5. ir a Sedes" << endl;
+        cout << "    Modificar Empresa:" << endl;
+        cout << "        5. Modificar estado" << endl;
+        cout << "        6. Modificar dirección" << endl;
+        cout << "        7. Modificar teléfono" << endl;
+        cout << "        8. Modificar correo electrónico" << endl;
+        cout << endl;
+        cout << "    0. Volver al Menú Principal" << endl;
+        cout << endl;
+        cout << "=================================================" << endl;
+        cout << endl;
+        cout << "     Ingrese una opción para continuar:  ";
+        cin >> opcion;
+        cout << endl;
+
+
+        switch (opcion) {
+            case 1:
+                empresaManager.cargar();
+                break;
+            case 2:
+                empresaManager.buscar();
+                break;
+            case 3:
+                empresaManager.listarEmpresas();
+                break;
+            case 4:
+                empresaManager.EmpresasActivas();
+                break;
+            case 5:
+                empresaManager.modificarEstado();
+                break;
+            case 0:
+                cout << "Volviendo al menú principal..." << endl;
+                break;
+            default:
+                cout << "La opción ingresada no es valida. Intente de nuevo." << endl;
+        }
+
+        cout << endl;
+
+    }
+    while (opcion != 0);
+
 }
 
 
