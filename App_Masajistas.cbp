@@ -42,9 +42,12 @@
 		</Unit>
 		<Unit filename="classes/TipoServicio.cpp" />
 		<Unit filename="classes/Validacion.cpp" />
+		<Unit filename="files/EmpresaArchivo.cpp" />
 		<Unit filename="files/MasajistaArchivo.cpp" />
 		<Unit filename="files/TipoServicioArchivo.cpp" />
 		<Unit filename="headers/Empresa.h" />
+		<Unit filename="headers/EmpresaArchivo.h" />
+		<Unit filename="headers/EmpresaManager.h" />
 		<Unit filename="headers/Fecha.h" />
 		<Unit filename="headers/Masajista.h" />
 		<Unit filename="headers/MasajistaArchivo.h" />
@@ -56,6 +59,7 @@
 		<Unit filename="headers/TipoServicioManager.h" />
 		<Unit filename="headers/Validacion.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="managers/EmpresaManager.cpp" />
 		<Unit filename="managers/MasajistaManager.cpp" />
 		<Unit filename="managers/TipoServicioManager.cpp" />
 		<Extensions />

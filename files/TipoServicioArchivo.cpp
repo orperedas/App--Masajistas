@@ -20,64 +20,6 @@ int TipoServicioArchivo::tamanioRegistro(){
 }
 
 
-bool TipoServicioArchivo::guardar(TipoServicio registro){
-    FILE *tsArchivo;
-    bool resultado;
-
-    tsArchivo = fopen(_nombreArchivo.c_str(), "ab");
-
-    if(tsArchivo == nullptr){
-        return false;
-    }
-
-    resultado = fwrite(&registro, tamanioRegistro(), 1, tsArchivo);
-
-    fclose(tsArchivo);
-
-    return resultado;
-}
-
-
-bool TipoServicioArchivo::guardar(TipoServicio registro, int posicion){
-    FILE *tsArchivo;
-    int tamRegistro = tamanioRegistro();
-    bool resultado;
-
-    tsArchivo = fopen(_nombreArchivo.c_str(), "rb+");
-
-    if(tsArchivo == nullptr){
-        return false;
-    }
-
-    fseek(tsArchivo, posicion * tamRegistro, SEEK_SET);
-    resultado = fwrite(&registro, tamRegistro, 1, tsArchivo);
-
-    fclose(tsArchivo);
-
-    return resultado;
-}
-
-
-bool TipoServicioArchivo::modificarEsstado(TipoServicio registro, int posicion){
-    FILE *tsArchivo;
-    int tamRegistro = tamanioRegistro();
-    bool resultado;
-
-    tsArchivo = fopen(_nombreArchivo.c_str(), "rb+");
-
-    if(tsArchivo == nullptr){
-        return false;
-    }
-
-    fseek(tsArchivo, posicion * tamRegistro, SEEK_SET);
-    resultado = fwrite(&registro, tamRegistro, 1, tsArchivo);
-
-    fclose(tsArchivo);
-
-    return resultado;
-}
-
-
 int TipoServicioArchivo::getCantidadTipos(){
     int tamanioArchivo, tamRegistro, totalMasajistas;
 
@@ -125,6 +67,64 @@ int TipoServicioArchivo::buscar(int idTipoServicio){
     fclose(tsArchivo);
 
     return -2;
+}
+
+
+bool TipoServicioArchivo::guardar(TipoServicio registro){
+    FILE *tsArchivo;
+    bool resultado;
+
+    tsArchivo = fopen(_nombreArchivo.c_str(), "ab");
+
+    if(tsArchivo == nullptr){
+        return false;
+    }
+
+    resultado = fwrite(&registro, tamanioRegistro(), 1, tsArchivo);
+
+    fclose(tsArchivo);
+
+    return resultado;
+}
+
+
+bool TipoServicioArchivo::guardar(TipoServicio registro, int posicion){
+    FILE *tsArchivo;
+    int tamRegistro = tamanioRegistro();
+    bool resultado;
+
+    tsArchivo = fopen(_nombreArchivo.c_str(), "rb+");
+
+    if(tsArchivo == nullptr){
+        return false;
+    }
+
+    fseek(tsArchivo, posicion * tamRegistro, SEEK_SET);
+    resultado = fwrite(&registro, tamRegistro, 1, tsArchivo);
+
+    fclose(tsArchivo);
+
+    return resultado;
+}
+
+
+bool TipoServicioArchivo::modificar(TipoServicio registro, int posicion){
+    FILE *tsArchivo;
+    int tamRegistro = tamanioRegistro();
+    bool resultado;
+
+    tsArchivo = fopen(_nombreArchivo.c_str(), "rb+");
+
+    if(tsArchivo == nullptr){
+        return false;
+    }
+
+    fseek(tsArchivo, posicion * tamRegistro, SEEK_SET);
+    resultado = fwrite(&registro, tamRegistro, 1, tsArchivo);
+
+    fclose(tsArchivo);
+
+    return resultado;
 }
 
 

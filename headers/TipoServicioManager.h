@@ -5,12 +5,12 @@ class TipoServicioManager{
 
 
     public:
-        void buscarTipoServicio();
-        void cargarTipoServicio();
+        void buscar();
+        void cargar();
         void listarIdsNombres();
         void listarTipoServicios();
-        void TiposServiciosActivos();
+        void modificarDescripcion();
         void modificarEstado();
         void modificarValorHora();
-
+        void TiposServiciosActivos();
 };

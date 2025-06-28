@@ -117,7 +117,7 @@ std::string Masajista::mostrarEnPantalla(){
     cadena += string(_direccion) + "  ";
     cadena += string(_telefono) + "  ";
     cadena += string(_email) + "  ";
-    cadena += to_string(_estado);
+    cadena += to_string(_estado) + "\n";
 
     return cadena;
 }
@@ -127,7 +127,7 @@ std::string Masajista::mostrarDniNombreMasajistas(){
     string cadena = "";
     cadena = string(_dni) + "  ";
     cadena += string(_nombre) + " ";
-    cadena += string(_apellido);
+    cadena += string(_apellido) + "\n";
 
     return cadena;
 }

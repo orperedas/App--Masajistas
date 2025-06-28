@@ -45,9 +45,9 @@ void MasajistaManager::buscarMasajista(){
         cout << "DNI:                 " << registro.getDni() << endl;
         cout << "Nombre:              " << registro.getNombre() << endl;
         cout << "Apellido:            " << registro.getApellido() << endl;
-        cout << "Dirección:           " << registro.getDireccion() << endl;
-        cout << "Teléfono:            " << registro.getTelefono() << endl;
-        cout << "Correo electrónico:  " << registro.getEmail() << endl;
+        cout << "DirecciÃ³n:           " << registro.getDireccion() << endl;
+        cout << "TelÃ©fono:            " << registro.getTelefono() << endl;
+        cout << "Correo electrÃ³nico:  " << registro.getEmail() << endl;
 
         if(registro.getEstado() == true){
             cout << "Estado:              Activo" << endl;
@@ -86,11 +86,11 @@ void MasajistaManager::cargarMasajista(){
     cout << "ingrese el CUIT: ";
     cin >> cuit;
 
-    cout << "Ingrese Dirección: ";
+    cout << "Ingrese DirecciÃ³n: ";
     cin.ignore();
     getline(cin, direccion);
 
-    cout << "Ingrese Teléfono: ";
+    cout << "Ingrese TelÃ³fono: ";
     cin >> telefono;
 
     cout << "Ingrese E-mail: ";
@@ -102,11 +102,11 @@ void MasajistaManager::cargarMasajista(){
 
     if(masArchivo.guardar(registro)){
         cout << endl;
-        cout << "Nuevo masajista guardado con éxito." << endl;
+        cout << "Nuevo masajista guardado con ï¿½xito." << endl;
     }
     else{
         cout << endl;
-        cout << "Error inesperado, no se guardó el registro" << endl;
+        cout << "Error inesperado, no se guardï¿½ el registro" << endl;
     }
 
     cout << endl;
@@ -153,10 +153,7 @@ void MasajistaManager::masajistasActivos(){
             estado = registro.getEstado();
 
             if(estado == true){
-                cout << registro.getDni() << " ";
-                cout << registro.getNombre() << " ";
-                cout << registro.getApellido() << ": ";
-                cout << "Estado actual: Activo" << endl;
+                cout << registro.mostrarDniNombreMasajistas() << endl;
 
                 cantidadActivos ++;
             }
@@ -180,7 +177,7 @@ void MasajistaManager::modificarEstadoMasajista(){
     Masajista registro;
 
     string dni;
-    bool estado, cambiarEstado;
+    bool estado;
     int posicion;
 
     registro.mostrarDniNombreMasajistas();
@@ -214,7 +211,7 @@ void MasajistaManager::modificarEstadoMasajista(){
 
         if (masArchivo.guardar(registro, posicion)){
             cout << endl;
-            cout << "Estado modificado y registro guardado con éxito." << endl;
+            cout << "Estado modificado y registro guardado con ï¿½xito." << endl;
         }
         else{
             cout << endl;

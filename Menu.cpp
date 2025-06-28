@@ -2,6 +2,8 @@
 #include <stdlib.h>
 
 #include "Menu.h"
+
+#include "EmpresaManager.h"
 #include "MasajistaManager.h"
 #include "TipoServicioManager.h"
 
@@ -123,15 +125,23 @@ void Menu::masajistas(){
 void Menu::empresas(){
     int opcion;
 
+    EmpresaManager empresaManager;
+
     do{
         Menu::cabeceraMenu();
 
         cout << "  ----- MENÚ EMPRESAS -----" << endl;
         cout << endl;
-        cout << "    1. Listar empresa" << endl;
-        cout << "    2. Agregar empresa" << endl;
-        cout << "    3. Modificar empresa" << endl;
-        cout << "    4. Eliminar empresa" << endl;
+        cout << "    1. Agregar nueva empresa" << endl;
+        cout << "    2. Buscar empresa" << endl;
+        cout << "    3. Listado de todas las empresas" << endl;
+        cout << "    4. Listado de empresas activas" << endl;
+        cout << endl;
+        cout << "    Modificar Empresa:" << endl;
+        cout << "        5. Modificar estado" << endl;
+        cout << "        6. Modificar dirección" << endl;
+        cout << "        7. Modificar teléfono" << endl;
+        cout << "        8. Modificar correo electrónico" << endl;
         cout << endl;
         cout << "    0. Volver al Menú Principal" << endl;
         cout << endl;
@@ -144,16 +154,19 @@ void Menu::empresas(){
 
         switch (opcion) {
             case 1:
-                cout << "Listado de empresa" << endl;
+                empresaManager.cargar();
                 break;
             case 2:
-                cout << "Agregrar empresa" << endl;
+                empresaManager.buscar();
                 break;
             case 3:
-                cout << "Modificar empresa" << endl;
+                empresaManager.listarEmpresas();
                 break;
             case 4:
-                cout << "Eliminar empresa" << endl;
+                empresaManager.EmpresasActivas();
+                break;
+            case 5:
+                empresaManager.modificarEstado();
                 break;
             case 0:
                 cout << "Volviendo al menú principal..." << endl;
@@ -252,10 +265,10 @@ void Menu::tipoServicio(){
 
         switch (opcion) {
             case 1:
-                tipoServicioManager.cargarTipoServicio();
+                tipoServicioManager.cargar();
                 break;
             case 2:
-                tipoServicioManager.buscarTipoServicio();
+                tipoServicioManager.buscar();
                 break;
             case 3:
                 tipoServicioManager.listarTipoServicios();
@@ -270,7 +283,7 @@ void Menu::tipoServicio(){
                 tipoServicioManager.modificarValorHora();
                 break;
             case 0:
-                cout << "Volviendo al men· principal..." << endl;
+                cout << "Volviendo al menú principal..." << endl;
                 break;
             default:
                 cout << "La opción ingresada no es válida. Intente de nuevo." << endl;

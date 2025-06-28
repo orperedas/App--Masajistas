@@ -26,7 +26,7 @@ class Empresa{
         bool getEstado();
 
         // Setters
-        void setId(int dni);
+        void setId(int id);
         void setNombre(std::string nombre);
         void setCuit(std::string cuit);
         void setDireccion(std::string direccion);
@@ -36,4 +36,5 @@ class Empresa{
 
         std::string enviarAcsv();
         std::string mostrarEnPantalla();
+        std::string mostrarIdNombre();
 };

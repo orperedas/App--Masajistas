@@ -58,13 +58,13 @@ std::string TipoServicio::mostrarEnPantalla(){
     cadena += string(_descripcion) + " | ";
     cadena += string(_modalidad) + " | ";
     cadena += to_string(_valorHora) + " | ";
-    cadena += to_string(_estado);
+    cadena += to_string(_estado) + "\n";
 
     return cadena;
 }
 
 
-std::string TipoServicio::mostrarIdNombreTipo(){
+std::string TipoServicio::mostrarIdNombre(){
     string cadena = "";
     cadena = to_string(_id) + "  ";
     cadena += string(_nombre);

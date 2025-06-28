@@ -10,7 +10,7 @@
 using namespace std;
 
 
-void TipoServicioManager::buscarTipoServicio(){
+void TipoServicioManager::buscar(){
     TipoServicioArchivo tsArchivo;
     TipoServicio registro;
 //    Validacion validador;
@@ -22,7 +22,7 @@ void TipoServicioManager::buscarTipoServicio(){
     if(todoLosTipos > 0){
         for(int i = 0; i < todoLosTipos; i++){
             registro = tsArchivo.leer(i);
-            cout << registro.mostrarIdNombreTipo() << endl;
+            cout << registro.mostrarIdNombre() << endl;
         }
     }
     else{
@@ -70,7 +70,7 @@ void TipoServicioManager::buscarTipoServicio(){
 }
 
 
-void TipoServicioManager::cargarTipoServicio(){
+void TipoServicioManager::cargar(){
     TipoServicioArchivo tsArchivo;
     TipoServicio registro;
 
@@ -177,9 +177,19 @@ void TipoServicioManager::modificarEstado(){
     TipoServicio registro;
 
     int id, posicion;
-    bool estado, cambiarEstado;
+    bool estado;
+    int cantidadTipoServicio = tsArchivo.getCantidadTipos();
 
-    registro.mostrarIdNombreTipo();
+    if(cantidadTipoServicio >= 0){
+        for(int i = 0; i < cantidadTipoServicio; i ++){
+            registro = tsArchivo.leer(i);
+            cout << registro.mostrarIdNombre() << endl;
+        }
+    }
+    else{
+        cout << endl;
+        cout << "\t\tNo hay registros para mostrar." << endl;
+    }
 
     cout << "Ingrese el ID del tipo de servicio a modificar: ";
     cin >> id;
@@ -191,20 +201,26 @@ void TipoServicioManager::modificarEstado(){
         estado = registro.getEstado();
 
         cout << "Estado acutal del tipo de servicio" << endl;
-        cout << "  id: " << registro.getId() << endl;
-        cout << "  Nombre: " << registro.getNombre() << endl;
-
+        cout << "  id:             " << registro.getId() << endl;
+        cout << "  Nombre:         " << registro.getNombre() << endl;
+        
         if(estado == 1){
-            cout << "Estado actual: Activo" << endl;
+            cout << "  Estado actual: Activo" << endl;
         }
         else{
-            cout << "Estado actual: Inactivo" << endl;
+            cout << "  Estado actual: Inactivo" << endl;
         }
 
         estado = !estado;
 
         cout << endl;
-        cout << "Estado modificado a: " << estado << endl;
+        
+        if(estado == 1){
+            cout << "El estado del masajista cambió a: Activo" << endl;
+        }
+        else{
+            cout << "El estado del masajista cambió a: Inactivo" << endl;
+        }
 
         registro.setEstado(estado);
 
@@ -243,7 +259,7 @@ void TipoServicioManager::modificarValorHora(){
     int id, posicion;
     float valorHora;
 
-    registro.mostrarIdNombreTipo();
+    registro.mostrarIdNombre();
 
     cout << "Ingrese el ID del tipo de servicio a modificar: ";
     cin >> id;

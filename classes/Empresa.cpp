@@ -6,15 +6,15 @@ using namespace std;
 
 Empresa::Empresa(){
     int _id = 0;
-    strcpy(_nombre, "");
-    strcpy(_cuit, "");
-    strcpy(_direccion, "");
-    strcpy(_telefono, "");
-    strcpy(_email, "");
+    char _nombre[20];
+    char _cuit[11];
+    char _direccion[50];
+    char _telefono[15];
+    char _email[50];
     bool _estado;
 }
 
-Empresa::Empresa(int id, std::string nombre, std::string cuit, std::string direccion, std::string telefono,  std::string email, bool estado){
+Empresa::Empresa(int id, std::string nombre, std::string cuit, std::string direccion, std::string telefono, std::string email, bool estado){
     setId(id);
     setNombre(nombre);
     setCuit(cuit);
@@ -99,14 +99,22 @@ std::string Empresa::enviarAcsv(){
 
 std::string Empresa::mostrarEnPantalla(){
     string cadena = "";
-    cadena = to_string(_id) + "  ";
-    cadena += string(_nombre) + "  ";
-    cadena += string(_cuit) + "  ";
-    cadena += string(_direccion) + "  ";
-    cadena += string(_telefono) + "  ";
-    cadena += string(_email) + "  ";
-    cadena += to_string(_estado);
+    cadena = to_string(_id) + " | ";
+    cadena += string(_nombre) + " | ";
+    cadena += string(_cuit) + " | ";
+    cadena += string(_direccion) + " | ";
+    cadena += string(_telefono) + " | ";
+    cadena += string(_email) + " | ";
+    cadena += to_string(_estado) + "\n";
 
     return cadena;
 }
 
+
+std::string Empresa::mostrarIdNombre(){
+    string cadena = "";
+    cadena = to_string(_id) + "  ";
+    cadena += string(_nombre) + "\n";
+
+    return cadena;
+}

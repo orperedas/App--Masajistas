@@ -13,11 +13,12 @@ class MasajistaArchivo{
         MasajistaArchivo(std::string nombreArchivo);
 
         int tamanioRegistro();
+        int getCantidadMasajistas();
+
+        int buscar(std::string dniMasajista);
         bool guardar(Masajista registro);
         bool guardar(Masajista registro, int posicion);
-        bool modificarEsstado(Masajista registro, int posicio);
-        int getCantidadMasajistas();
-        int buscar(std::string dniMasajista);
+        bool modificar(Masajista registro, int posicio);
 
         Masajista leer(int posiciion);
 };

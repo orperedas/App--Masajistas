@@ -14,11 +14,12 @@ class TipoServicioArchivo{
 
         bool comprobarExisteArchivo();
         int tamanioRegistro();
+        int getCantidadTipos();
+
+        int buscar(int idTipoServicio);
         bool guardar(TipoServicio registro);
         bool guardar(TipoServicio registro, int posicion);
-        bool modificarEsstado(TipoServicio registro, int posicio);
-        int getCantidadTipos();
-        int buscar(int idTipoServicio);
+        bool modificar(TipoServicio registro, int posicio);
 
         TipoServicio leer(int posiciion);
 };

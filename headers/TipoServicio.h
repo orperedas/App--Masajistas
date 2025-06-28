@@ -33,5 +33,5 @@ class TipoServicio{
 
         std::string enviarAcsv();
         std::string mostrarEnPantalla();
-        std::string mostrarIdNombreTipo();
+        std::string mostrarIdNombre();
 };
