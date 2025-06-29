@@ -10,10 +10,11 @@ class Sede{
         char _telefono[15];
         char _email[50];
         bool _estado;
+        int _idEmpresa;
 
     public:
         Sede();
-        Sede(int id, std::string nombre, std::string direccion, std::string telefono, std::string email, bool estado);
+        Sede(int id, std::string nombre, std::string direccion, std::string telefono, std::string email, bool estado, int idEmpresa);
 
         // Getters
         int getId();
@@ -22,6 +23,7 @@ class Sede{
         std::string getTelefono();
         std::string getEmail();
         bool getEstado();
+        int getIdEmpresa();
 
         // Setters
         void setId(int id);
@@ -30,7 +32,9 @@ class Sede{
         void setTelefono(std::string telefono);
         void setEmail(std::string email);
         void setEstado(bool estado);
+        void setIdEmpresa(int idEmpresa);
 
         std::string enviarAcsv();
         std::string mostrarEnPantalla();
+        std::string mostrarIdNombre();
 };

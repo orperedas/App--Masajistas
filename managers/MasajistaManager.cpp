@@ -180,7 +180,7 @@ void MasajistaManager::modificarEstadoMasajista(){
     bool estado;
     int posicion;
 
-    registro.mostrarDniNombreMasajistas();
+    masajistasActivos();
 
     cout << "Ingrese el DNI del masajista: ";
     cin >> dni;

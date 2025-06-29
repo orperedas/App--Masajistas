@@ -5,6 +5,7 @@
 
 #include "EmpresaManager.h"
 #include "MasajistaManager.h"
+#include "SedeManager.h"
 #include "TipoServicioManager.h"
 
 using namespace std;
@@ -58,6 +59,67 @@ void Menu::principal(){
                 break;
             default:
                 cout << "La opción ingresada no es válida. Intente de nuevo." << endl;
+        }
+
+        cout << endl;
+
+    }
+    while (opcion != 0);
+}
+
+
+// Menús de clases
+void Menu::empresas(){
+    int opcion;
+
+    EmpresaManager empresaManager;
+
+    do{
+        Menu::cabeceraMenu();
+
+        cout << "  ----- MENÚ EMPRESAS -----" << endl;
+        cout << endl;
+        cout << "    1. Agregar nueva empresa" << endl;
+        cout << "    2. Buscar empresa" << endl;
+        cout << "    3. Listado de todas las empresas" << endl;
+        cout << "    4. Listado de empresas activas" << endl;
+        cout << "    5. Modificar registro de Empresa" << endl;
+        cout << endl;
+        cout << "    6. ir al Menú Sedes" << endl;
+        cout << endl;
+        cout << "    0. Volver al Menú Principal" << endl;
+        cout << endl;
+        cout << "=================================================" << endl;
+        cout << endl;
+        cout << "     Ingrese una opción para continuar:  ";
+        cin >> opcion;
+        cout << endl;
+
+
+        switch (opcion) {
+            case 1:
+                empresaManager.cargar();
+                break;
+            case 2:
+                empresaManager.buscar();
+                break;
+            case 3:
+                empresaManager.listarEmpresas();
+                break;
+            case 4:
+                empresaManager.EmpresasActivas();
+                break;
+            case 5:
+                Menu::modificarEmpresa();
+                break;
+            case 6:
+                Menu::sedes();
+                break;
+            case 0:
+                cout << "Volviendo al menú principal..." << endl;
+                break;
+            default:
+                cout << "La opción ingresada no es valida. Intente de nuevo." << endl;
         }
 
         cout << endl;
@@ -122,88 +184,21 @@ void Menu::masajistas(){
 }
 
 
-void Menu::empresas(){
-    int opcion;
-
-    EmpresaManager empresaManager;
-
-    do{
-        Menu::cabeceraMenu();
-
-        cout << "  ----- MENÚ EMPRESAS -----" << endl;
-        cout << endl;
-        cout << "    1. Agregar nueva empresa" << endl;
-        cout << "    2. Buscar empresa" << endl;
-        cout << "    3. Listado de todas las empresas" << endl;
-        cout << "    4. Listado de empresas activas" << endl;
-        cout << endl;
-        cout << "    5. ir a Sedes" << endl;
-        cout << "    Modificar Empresa:" << endl;
-        cout << "        5. Modificar estado" << endl;
-        cout << "        6. Modificar dirección" << endl;
-        cout << "        7. Modificar teléfono" << endl;
-        cout << "        8. Modificar correo electrónico" << endl;
-        cout << endl;
-        cout << "    0. Volver al Menú Principal" << endl;
-        cout << endl;
-        cout << "=================================================" << endl;
-        cout << endl;
-        cout << "     Ingrese una opción para continuar:  ";
-        cin >> opcion;
-        cout << endl;
-
-
-        switch (opcion) {
-            case 1:
-                empresaManager.cargar();
-                break;
-            case 2:
-                empresaManager.buscar();
-                break;
-            case 3:
-                empresaManager.listarEmpresas();
-                break;
-            case 4:
-                empresaManager.EmpresasActivas();
-                break;
-            case 5:
-                empresaManager.modificarEstado();
-                break;
-            case 0:
-                cout << "Volviendo al menú principal..." << endl;
-                break;
-            default:
-                cout << "La opción ingresada no es valida. Intente de nuevo." << endl;
-        }
-
-        cout << endl;
-
-    }
-    while (opcion != 0);
-}
-
-
 void Menu::sedes(){
     int opcion;
 
-    EmpresaManager empresaManager;
+    SedeManager sedeManager;
 
     do{
         Menu::cabeceraMenu();
 
         cout << "  ----- MENÚ EMPRESAS -----" << endl;
         cout << endl;
-        cout << "    1. Agregar nueva empresa" << endl;
-        cout << "    2. Buscar empresa" << endl;
-        cout << "    3. Listado de todas las empresas" << endl;
-        cout << "    4. Listado de empresas activas" << endl;
-        cout << endl;
-        cout << "    5. ir a Sedes" << endl;
-        cout << "    Modificar Empresa:" << endl;
-        cout << "        5. Modificar estado" << endl;
-        cout << "        6. Modificar dirección" << endl;
-        cout << "        7. Modificar teléfono" << endl;
-        cout << "        8. Modificar correo electrónico" << endl;
+        cout << "    1. Agregar sede" << endl;
+        cout << "    2. Buscar sedes" << endl;
+        cout << "    3. Listado de todas las sedes" << endl;
+        cout << "    4. Listado de sedes activas" << endl;
+        cout << "    5. Modificar registro de sede:" << endl;
         cout << endl;
         cout << "    0. Volver al Menú Principal" << endl;
         cout << endl;
@@ -216,19 +211,19 @@ void Menu::sedes(){
 
         switch (opcion) {
             case 1:
-                empresaManager.cargar();
+                sedeManager.cargar();
                 break;
             case 2:
-                empresaManager.buscar();
+                sedeManager.buscar();
                 break;
             case 3:
-                empresaManager.listarEmpresas();
+                sedeManager.listarSedes();
                 break;
             case 4:
-                empresaManager.EmpresasActivas();
+                sedeManager.sedesActivas();
                 break;
             case 5:
-                empresaManager.modificarEstado();
+                //Menu::modificarSede;
                 break;
             case 0:
                 cout << "Volviendo al menú principal..." << endl;
@@ -358,3 +353,122 @@ void Menu::tipoServicio(){
     while (opcion != 0);
 }
 
+
+// Menús de modificación de registros
+
+void Menu::modificarEmpresa(){
+    int opcion;
+
+    EmpresaManager empresaManager;
+
+    do{
+        Menu::cabeceraMenu();
+
+        cout << "----- MENÚ MODIFICAR REGISTRO DE EMPRESAS -----" << endl;
+        cout << endl;
+        cout << "    1. Modificar nombre" << endl;
+        cout << "    2. Modificar CUIT" << endl;
+        cout << "    3. Modificar Dirección" << endl;
+        cout << "    4. Modificar Teléfono" << endl;
+        cout << "    5. Modificar Correo electrónico" << endl;
+        cout << "    6. Modificar Estado" << endl;
+        cout << endl;
+        cout << "    0. Volver al Menú Principal" << endl;
+        cout << endl;
+        cout << "=================================================" << endl;
+        cout << endl;
+        cout << "     Ingrese una opción para continuar:  ";
+        cin >> opcion;
+        cout << endl;
+
+
+        switch (opcion) {
+            case 1:
+                //empresaManager.modificarNombre();
+                break;
+            case 2:
+                //empresaManager.modificarCuit();
+                break;
+            case 3:
+                empresaManager.modificarDireccion();
+                break;
+            case 4:
+                empresaManager.modificarTelefono();
+                break;
+            case 5:
+                empresaManager.modificarEmail();
+                break;
+            case 6:
+                empresaManager.modificarEstado();
+                break;
+            case 0:
+                cout << "Volviendo al menú principal..." << endl;
+                break;
+            default:
+                cout << "La opción ingresada no es valida. Intente de nuevo." << endl;
+        }
+
+        cout << endl;
+
+    }
+    while (opcion != 0);
+}
+
+
+void Menu::modificarSede(){
+    int opcion;
+
+    SedeManager sedeManager;
+
+    do{
+        Menu::cabeceraMenu();
+
+        cout << "----- MENÚ MODIFICAR REGISTRO DE EMPRESAS -----" << endl;
+        cout << endl;
+        cout << "    1. Modificar nombre" << endl;
+        cout << "    2. Modificar Dirección" << endl;
+        cout << "    3. Modificar Teléfono" << endl;
+        cout << "    4. Modificar Correo electrónico" << endl;
+        cout << "    5. Modificar Estado" << endl;
+        cout << "    6. Modificar ID de Empresa" << endl;
+        cout << endl;
+        cout << "    0. Volver al Menú Principal" << endl;
+        cout << endl;
+        cout << "=================================================" << endl;
+        cout << endl;
+        cout << "     Ingrese una opción para continuar:  ";
+        cin >> opcion;
+        cout << endl;
+
+
+        switch (opcion) {
+            case 1:
+                sedeManager.modificarNombre();
+                break;
+            case 2:
+                sedeManager.modificarDireccion();
+                break;
+            case 3:
+                sedeManager.modificarTelefono();
+                break;
+            case 4:
+                sedeManager.modificarEmail();
+                break;
+            case 5:
+                sedeManager.modificarEstado();
+                break;
+            case 6:
+                sedeManager.modificarIdEmpresa();
+                break;
+            case 0:
+                cout << "Volviendo al menú principal..." << endl;
+                break;
+            default:
+                cout << "La opción ingresada no es valida. Intente de nuevo." << endl;
+        }
+
+        cout << endl;
+
+    }
+    while (opcion != 0);
+}

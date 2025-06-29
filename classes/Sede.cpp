@@ -12,15 +12,17 @@ Sede::Sede(){
     strcpy(_telefono, "");
     strcpy(_email, "");
     bool _estado;
+    int _idEmpresa = 0;
 }
 
-Sede::Sede(int id, std::string nombre, std::string direccion, std::string telefono, std::string email, bool estado){
+Sede::Sede(int id, std::string nombre, std::string direccion, std::string telefono, std::string email, bool estado, int idEmpresa){
     setId(id);
     setNombre(nombre);
     setDireccion(direccion);
     setTelefono(telefono);
     setEmail(email);
     setEstado(estado);
+    setIdEmpresa(idEmpresa);
 }
 
 int Sede::getId(){
@@ -47,6 +49,11 @@ bool Sede::getEstado(){
     return _estado;
 }
 
+int Sede::getIdEmpresa(){
+    return _idEmpresa;
+}
+
+
 // Setters
 void Sede::setId(int id){
     _id = id;
@@ -72,6 +79,10 @@ void Sede::setEstado(bool estado){
     _estado = estado;
 }
 
+void Sede::setIdEmpresa(int idEmpresa){
+    _idEmpresa = idEmpresa;
+}
+
 
 std::string Sede::enviarAcsv(){
     string cadena = "";
@@ -80,7 +91,8 @@ std::string Sede::enviarAcsv(){
     cadena += string(_direccion) + ",";
     cadena += string(_telefono) + ",";
     cadena += string(_email) + ",";
-    cadena += to_string(_estado);
+    cadena += to_string(_estado) + ",";
+    cadena += to_string(_idEmpresa);
 
     return cadena;
 }
@@ -93,7 +105,17 @@ std::string Sede::mostrarEnPantalla(){
     cadena += string(_direccion) + "  ";
     cadena += string(_telefono) + "  ";
     cadena += string(_email) + "  ";
-    cadena += to_string(_estado);
+    cadena += to_string(_estado) + "  ";
+    cadena += to_string(_idEmpresa);
+
+    return cadena;
+}
+
+
+std::string Sede::mostrarIdNombre(){
+    string cadena = "";
+    cadena = to_string(_id) + "  ";
+    cadena += string(_nombre);
 
     return cadena;
 }

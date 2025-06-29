@@ -176,8 +176,12 @@ void EmpresaManager::EmpresasActivas(){
                 cout << registro.getDireccion() << "  ";
                 cout << registro.getTelefono() << "  ";
                 cout << registro.getEmail() << endl;
+
+                cantidadActivas ++;
             }
         }
+
+        cout << "Empresas activas: " << cantidadActivas << endl;
     }
     else{
         cout << endl;
