@@ -7,8 +7,12 @@ class EmpresaManager{
         void listarIdsNombres();
         void listarEmpresas();
         void EmpresasActivas();
-        void modificarEstado();
+
+        // Modificadores de registros
+        void modificarCuit();
         void modificarDireccion();
-        void modificarTelefono();
         void modificarEmail();
+        void modificarEstado();
+        void modificarNombre();
+        void modificarTelefono();
 };

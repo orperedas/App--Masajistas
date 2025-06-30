@@ -7,8 +7,9 @@ class SedeManager{
         void listarIdsNombres();
         void listarSedes();
         void sedesActivas();
+        void sedesPorEmpresa();
 
-        // Modificaciones a los registros
+        // Modificadores de registros
         void modificarDireccion();
         void modificarEmail();
         void modificarEstado();

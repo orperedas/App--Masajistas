@@ -1,7 +1,7 @@
 #include "TipoServicio.h"
 #include "TipoServicioArchivo.h"
 #include "TipoServicioManager.h"
-#include "Validacion.h"
+//#include "Validacion.h"
 
 #include <iostream>
 #include <string>
@@ -112,6 +112,28 @@ void TipoServicioManager::cargar(){
 }
 
 
+void TipoServicioManager::listarIdsNombres(){
+    TipoServicioArchivo empArchivo;
+    TipoServicio registro;
+
+    int cantidadTipoServicios = empArchivo.getCantidadTipos();
+
+    if(cantidadTipoServicios >= 0){
+        for(int i = 0; i < cantidadTipoServicios; i ++){
+            registro = empArchivo.leer(i);
+            cout << registro.mostrarIdNombre() << endl;
+        }
+    }
+    else{
+        cout << endl;
+        cout << "\t\tNo hay registros para mostrar." << endl;
+    }
+
+    cout << endl;
+    system("pause");
+}
+
+
 void TipoServicioManager::listarTipoServicios(){
     TipoServicioArchivo tsArchivo;
     TipoServicio registro;
@@ -172,6 +194,66 @@ void TipoServicioManager::TiposServiciosActivos(){
 }
 
 
+
+// Modificadores de registros
+
+void TipoServicioManager::modificarDescripcion(){
+    TipoServicioArchivo tsArchivo;
+    TipoServicioManager tsManager;
+    TipoServicio registro;
+
+    int id, posicion;
+    std::string descripcion;
+
+    tsManager.listarIdsNombres();
+
+    cout << "Ingrese el ID del tipo de servicio a modificar: ";
+    cin >> id;
+
+    posicion = tsArchivo.buscar(id);
+
+    if(posicion >= 0){
+        registro = tsArchivo.leer(posicion);
+
+        cout << "Descripción actual para:" << endl;
+        cout << "  id:        " << registro.getId() << endl;
+        cout << "  Nombre:    " << registro.getNombre() << endl;
+        cout << "  Dirección: " << registro.getDescripcion() << endl;
+
+        cout << endl;
+        cout << "Ingrese el nuevo valor por hora: ";
+        cin >> descripcion;
+
+        registro.setDescripcion(descripcion);
+
+        if (tsArchivo.guardar(registro, posicion)){
+            cout << endl;
+            cout << "Descripción y registro actualizados con éxito." << endl;
+        }
+        else{
+            cout << endl;
+            cout << "Ha ocurrido un error al intentar modificar el registro." << endl;
+        }
+
+    }
+    else{
+        if (posicion == -1){
+            cout << endl;
+            cout << "No existe el ID buscado." << endl;
+        }
+        else{
+            if (posicion == -2){
+                cout << endl;
+                cout << "No se ha encontrado el archivo." << endl;
+            }
+        }
+    }
+
+    cout << endl;
+    system("pause");
+}
+
+
 void TipoServicioManager::modificarEstado(){
     TipoServicioArchivo tsArchivo;
     TipoServicio registro;
@@ -180,16 +262,7 @@ void TipoServicioManager::modificarEstado(){
     bool estado;
     int cantidadTipoServicio = tsArchivo.getCantidadTipos();
 
-    if(cantidadTipoServicio >= 0){
-        for(int i = 0; i < cantidadTipoServicio; i ++){
-            registro = tsArchivo.leer(i);
-            cout << registro.mostrarIdNombre() << endl;
-        }
-    }
-    else{
-        cout << endl;
-        cout << "\t\tNo hay registros para mostrar." << endl;
-    }
+    TipoServicioManager::listarIdsNombres();
 
     cout << "Ingrese el ID del tipo de servicio a modificar: ";
     cin >> id;
@@ -203,7 +276,7 @@ void TipoServicioManager::modificarEstado(){
         cout << "Estado acutal del tipo de servicio" << endl;
         cout << "  id:             " << registro.getId() << endl;
         cout << "  Nombre:         " << registro.getNombre() << endl;
-        
+
         if(estado == 1){
             cout << "  Estado actual: Activo" << endl;
         }
@@ -214,7 +287,7 @@ void TipoServicioManager::modificarEstado(){
         estado = !estado;
 
         cout << endl;
-        
+
         if(estado == 1){
             cout << "El estado del masajista cambió a: Activo" << endl;
         }
@@ -227,6 +300,115 @@ void TipoServicioManager::modificarEstado(){
         if (tsArchivo.guardar(registro, posicion)){
             cout << endl;
             cout << "Estado modificado y registro guardado con éxito." << endl;
+        }
+        else{
+            cout << endl;
+            cout << "Ha ocurrido un error al intentar modificar el registro." << endl;
+        }
+
+    }
+    else{
+        if (posicion == -1){
+            cout << endl;
+            cout << "No existe el ID buscado." << endl;
+        }
+        else{
+            if (posicion == -2){
+                cout << endl;
+                cout << "No se ha encontrado el archivo." << endl;
+            }
+        }
+    }
+
+    cout << endl;
+    system("pause");
+}
+
+
+void TipoServicioManager::modificarModalidad(){
+    TipoServicioArchivo tsArchivo;
+    TipoServicio registro;
+
+    int id, posicion;
+    std::string modalidad;
+
+    TipoServicioManager::listarIdsNombres();
+
+    cout << "Ingrese el ID del tipo de servicio a modificar: ";
+    cin >> id;
+
+    posicion = tsArchivo.buscar(id);
+
+    if(posicion >= 0){
+        registro = tsArchivo.leer(posicion);
+
+        cout << "Modalidad actual del Tipo de Servicio:" << endl;
+        cout << "  id:        " << registro.getId() << endl;
+        cout << "  Nombre:    " << registro.getNombre() << endl;
+        cout << "  Teléfono:  " << registro.getModalidad() << endl;
+        cout << endl;
+        cout << "Ingrese la nuevo modalidad: ";
+        cin >> modalidad;
+
+        registro.setNombre(modalidad);
+
+        if (tsArchivo.guardar(registro, posicion)){
+            cout << endl;
+            cout << "Modalidad y registro actualizados con éxito." << endl;
+        }
+        else{
+            cout << endl;
+            cout << "Ha ocurrido un error al intentar modificar el registro." << endl;
+        }
+
+    }
+    else{
+        if (posicion == -1){
+            cout << endl;
+            cout << "No existe el ID buscado." << endl;
+        }
+        else{
+            if (posicion == -2){
+                cout << endl;
+                cout << "No se ha encontrado el archivo." << endl;
+            }
+        }
+    }
+
+    cout << endl;
+    system("pause");
+}
+
+
+void TipoServicioManager::modificarNombre(){
+    TipoServicioArchivo tsArchivo;
+    TipoServicio registro;
+
+    int id, posicion;
+    std::string nombre;
+
+    TipoServicioManager::listarIdsNombres();
+
+    cout << "Ingrese el ID del tipo de servicio a modificar: ";
+    cin >> id;
+
+    posicion = tsArchivo.buscar(id);
+
+    if(posicion >= 0){
+        registro = tsArchivo.leer(posicion);
+
+        cout << "Nombre actual del Tipo de Servicio:" << endl;
+        cout << "  id:      " << registro.getId() << endl;
+        cout << "  Nombre:  " << registro.getNombre() << endl;
+        cout << endl;
+        cout << "Ingrese el nuevo nombre: ";
+        cin >> nombre;
+
+        registro.setNombre(nombre);
+
+        if (tsArchivo.guardar(registro, posicion)){
+            cout << endl;
+            cout << "Nombre y registro actualizados con éxito." << endl;
         }
         else{
             cout << endl;

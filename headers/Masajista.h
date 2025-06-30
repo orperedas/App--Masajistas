@@ -40,5 +40,5 @@ class Masajista{
         // Mostrar y convertir datos
         std::string enviarAcsv();
         std::string mostrarEnPantalla();
-        std::string mostrarDniNombreMasajistas();
+        std::string mostrarDniNombre();
 };

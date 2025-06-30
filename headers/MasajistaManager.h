@@ -10,6 +10,15 @@ class MasajistaManager{
         void listarDnisNombres();
         void listarMasajistas();
         void masajistasActivos();
-        void modificarEstadoMasajista();
         void mostrarCantidadMasajistas();
+
+        // Modificadores de registros
+        void modificarApellido();
+        void modificarCuit();
+        void modificarDireccion();
+        void modificarDni();
+        void modificarEmail();
+        void modificarEstado();
+        void modificarNombre();
+        void modificarTelefono();
 };

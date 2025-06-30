@@ -123,7 +123,7 @@ std::string Masajista::mostrarEnPantalla(){
 }
 
 
-std::string Masajista::mostrarDniNombreMasajistas(){
+std::string Masajista::mostrarDniNombre(){
     string cadena = "";
     cadena = string(_dni) + "  ";
     cadena += string(_nombre) + " ";

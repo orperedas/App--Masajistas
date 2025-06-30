@@ -40,6 +40,7 @@
 		<Unit filename="classes/Sede.cpp">
 			<Option target="Debug" />
 		</Unit>
+		<Unit filename="classes/Servicio.cpp" />
 		<Unit filename="classes/TipoServicio.cpp" />
 		<Unit filename="classes/Validacion.cpp" />
 		<Unit filename="files/EmpresaArchivo.cpp" />
@@ -57,6 +58,7 @@
 		<Unit filename="headers/Sede.h" />
 		<Unit filename="headers/SedeArchivo.h" />
 		<Unit filename="headers/SedeManager.h" />
+		<Unit filename="headers/Servicio.h" />
 		<Unit filename="headers/TipoServicio.h" />
 		<Unit filename="headers/TipoServicioArchivo.h" />
 		<Unit filename="headers/TipoServicioManager.h" />

@@ -75,6 +75,11 @@ void SedeManager::cargar(){
 
     id = sArchivo.getCantidadSedes() + 1;
 
+    empresaManager.EmpresasActivas();
+
+    cout << "Ingrese ID de la empresa a la que pertenece la sede:";
+    cin >> idEmpresa;
+
     cout << "Ingrese Nombre: ";
     cin.ignore();
     getline(cin, nombre);
@@ -90,11 +95,6 @@ void SedeManager::cargar(){
     getline(cin, email);
 
     estado = true;
-
-    empresaManager.EmpresasActivas();
-
-    cout << "Ingrese ID de la empresa a la que pertenece la sede:";
-    cin >> idEmpresa;
 
     registroSede = Sede(id, nombre, direccion, telefono, email, estado, idEmpresa);
 
@@ -162,9 +162,6 @@ void SedeManager::sedesActivas(){
     SedeArchivo sArchivo;
     Sede registroSede;
 
-    EmpresaArchivo eArchivo;
-    Empresa registroEmpresa;
-
     int cantidadSedes = sArchivo.getCantidadSedes();
     int cantidadActivas = 0;
     bool estado;
@@ -178,16 +175,7 @@ void SedeManager::sedesActivas(){
             estado = registroSede.getEstado();
 
             if(estado == true){
-                cout << registroSede.getId() << "  ";
-                cout << registroSede.getNombre() << "  ";
-                cout << registroSede.getDireccion() << "  ";
-                cout << registroSede.getTelefono() << "  ";
-                cout << registroSede.getEmail() << "  ";
-
-                if(registroSede.getIdEmpresa() == registroEmpresa.getId()){
-                    cout << registroEmpresa.getNombre() << endl;
-                }
-
+                cout << registroSede.mostrarEnPantalla() << endl;
                 cantidadActivas ++;
             }
         }
@@ -204,7 +192,50 @@ void SedeManager::sedesActivas(){
 }
 
 
-// Modificaciones a los registros
+
+void SedeManager::sedesPorEmpresa(){
+    SedeArchivo sArchivo;
+    Sede registroSede;
+
+    EmpresaManager eManager;
+    Empresa registroEmpresa;
+
+    int cantidadSedes = sArchivo.getCantidadSedes();
+    int idEmpresa, idSedeEmpresa;
+    std::string nombreEmpresa;
+
+    if(cantidadSedes > 0){
+        eManager.listarIdsNombres();
+
+        cout << "Ingrese el ID de la Empresa: ";
+        cin >> idEmpresa;
+
+        nombreEmpresa = registroEmpresa.getNombre();
+        cout << "Sedes de " << nombreEmpresa << endl;
+
+        for(int i = 0; i < cantidadSedes; i ++){
+            registroSede = sArchivo.leer(i);
+            idSedeEmpresa = registroSede.getIdEmpresa();
+
+            if(idEmpresa == idSedeEmpresa){
+                cout << registroSede.mostrarIdNombre() << endl;
+            }
+            else{
+                cout << nombreEmpresa << "no tiene sedes asociadas." << endl;
+            }
+        }
+    }
+    else{
+        cout << endl;
+        cout << "\t\tNo hay registros para mostrar." << endl;
+    }
+
+    cout << endl;
+    system("pause");
+}
+
+
+// Modificadores de registros
 
 void SedeManager::modificarDireccion(){
     SedeArchivo sArchivo;
