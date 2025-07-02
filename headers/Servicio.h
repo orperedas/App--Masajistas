@@ -6,38 +6,39 @@ class Servicio{
     private:
         int _idServicio;
         Fecha _fecha;
-        char _dniMasajista[20];
-        int _idEmpresa;
-        int _idSede;
-        int _idTipo;
-        int _cantidadHoras;
-        float _valorHora;
+        char _nombreMasajista[30];
+        char _nombreEmpresa[20];
+        char _nombreSede[20];
+        char _nombreTipo[20];
+        int _cantidadHorasTipo;
+        float _valorHoraTipo;
 
     public:
         Servicio();
-        Servicio(int idServicio, Fecha fecha, std::string dniMasajista, int idEmpresa, int idSede, int idTipo, int cantidadHoras, float valorHora);
+        Servicio(int idServicio, Fecha fecha, std::string nombreMasajista, std::string nombreEmpresa, std::string nombreSede, std::string nombreTipo, int cantidadHorasTipo, float valorHoraTipo);
 
         // Getters
         int getIdServicio();
         Fecha getFecha();
-        std::string getDniMasajista();
-        int getIdEmpresa();
-        int getIdSede();
-        int getIdTpo();
-        int getCantidadHoras();
-        float getValorHora();
+        std::string getnombreMasajista();
+        std::string getNombreEmpresa();
+        std::string getNombreSede();
+        std::string getNombreTpo();
+        int getCantidadHorasTipo();
+        float getValorHoraTipo();
 
         // Setters
         void setIdServicio(int idServicio);
         void setFecha(Fecha fecha);
-        void setDniMasajista(std::string dniMasajista);
-        void setIdEmpresa(int idEmpresa);
-        void setIdSede(int idSede);
-        void setIdTipo(int idTipo);
+        void setNombreMasajista(std::string nombreMasajista);
+        void setNombreEmpresa(std::string nombreEmpresa);
+        void setNombreSede(std::string nombreSede);
+        void setNombreTipo(std::string nombreTipo);
         void setCantidadHoras(int cantidadHoras);
-        void setValorHora(float valorHora);
+        void setValorHora(float valorHoraTipo);
 
         // Mostrar y convertir datos
         std::string enviarAcsv();
         std::string mostrarEnPantalla();
+        std::string mostrarIdNombre();
 };

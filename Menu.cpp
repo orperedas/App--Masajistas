@@ -6,6 +6,7 @@
 #include "EmpresaManager.h"
 #include "MasajistaManager.h"
 #include "SedeManager.h"
+#include "ServicioManager.h"
 #include "TipoServicioManager.h"
 
 using namespace std;
@@ -249,6 +250,8 @@ void Menu::sedes(){
 void Menu::servicios(){
     int opcion;
 
+    ServicioManager servicioManager;
+
     do{
         Menu::cabeceraMenu();
 
@@ -257,9 +260,7 @@ void Menu::servicios(){
         cout << "    1. Agregar Servicio" << endl;
         cout << "    2. Buscar Servicio" << endl;
         cout << "    3. Listado de todas las Servicio" << endl;
-        cout << "    4. Listado de Servicio activas" << endl;
-        cout << "    5. Listado de Servicio por empresa:" << endl;
-        cout << "    6. Modificar registro de Servicio:" << endl;
+        cout << "    4. Modificar registro de Servicio:" << endl;
         cout << endl;
         cout << "    0. Volver al Menú Principal" << endl;
         cout << endl;
@@ -272,22 +273,16 @@ void Menu::servicios(){
 
         switch (opcion) {
             case 1:
-                //servicioManager.cargar();
+                servicioManager.cargar();
                 break;
             case 2:
-                //servicioManager.buscar();
+                servicioManager.buscar();
                 break;
             case 3:
-                //servicioManager.listarServiciosMes();
+                servicioManager.listarServicios();
                 break;
             case 4:
-                //servicioManager.sedesActivas();
-                break;
-            case 5:
-                //servicioManager.serviciosPorEmpresaMes();
-                break;
-            case 6:
-                //Menu::modificarServicio();
+                Menu::modificarServicio();
                 break;
             case 0:
                 cout << "Volviendo al Menú Principal..." << endl;
@@ -525,6 +520,57 @@ void Menu::modificarSede(){
                 break;
             case 6:
                 sedeManager.modificarIdEmpresa();
+                break;
+            case 0:
+                cout << "Volviendo al Menú Sede..." << endl;
+                break;
+            default:
+                cout << "La opción ingresada no es valida. Intente de nuevo." << endl;
+        }
+
+        cout << endl;
+
+    }
+    while (opcion != 0);
+}
+
+
+void Menu::modificarServicio(){
+    int opcion;
+
+    ServicioManager servicioManager;
+
+    do{
+        Menu::cabeceraMenu();
+
+        cout << "----- MENÚ MODIFICAR SERVICIO -----" << endl;
+        cout << endl;
+        cout << "    1. Modificar Fecha" << endl;
+        cout << "    2. Modificar Masajista" << endl;
+        cout << "    3. Modificar Sede" << endl;
+        cout << "    4. Modificar Tipo de Servicio" << endl;
+        cout << endl;
+        cout << "    0. Volver al Menú Servicios" << endl;
+        cout << endl;
+        cout << "=================================================" << endl;
+        cout << endl;
+        cout << "     Ingrese una opción para continuar:  ";
+        cin >> opcion;
+        cout << endl;
+
+
+        switch (opcion) {
+            case 1:
+                servicioManager.modificarFecha();
+                break;
+            case 2:
+                servicioManager.modificarMasajista();
+                break;
+            case 3:
+                servicioManager.modificarSede();
+                break;
+            case 4:
+                servicioManager.modificarTipoServicio();
                 break;
             case 0:
                 cout << "Volviendo al Menú Sede..." << endl;

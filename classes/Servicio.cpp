@@ -9,23 +9,23 @@ using namespace std;
 Servicio::Servicio(){
     int _idServicio = 0;
     Fecha _fecha = Fecha();
-    strcpy(_dniMasajista, "");
-    int _idEmpresa = 0;
-    int _idSede = 0;
-    int _idTipo = 0;
+    strcpy(_nombreMasajista, "");
+    strcpy(_nombreEmpresa, "");
+    strcpy(_nombreSede, "");
+    strcpy(_nombreTipo, "");
     int _cantidadHoras = 0;
-    float _valorHora = 0.0;
+    float _valorHoraTipo = 0.0;
 }
 
-Servicio::Servicio(int idServicio, Fecha fecha, std::string dniMasajista, int idEmpresa, int idSede, int idTipo, int cantidadHoras, float valorHora){
+Servicio::Servicio(int idServicio, Fecha fecha, std::string nombreMasajista, std::string nombreEmpresa, std::string nombreSede, std::string nombreTipo, int cantidadHorasTipo, float valorHoraTipo){
     setIdServicio(idServicio);
     setFecha(fecha);
-    setDniMasajista(dniMasajista);
-    setIdEmpresa(idEmpresa);
-    setIdSede(idSede);
-    setIdTipo(idTipo);
-    setCantidadHoras(cantidadHoras);
-    setValorHora(valorHora);
+    setNombreMasajista(nombreMasajista);
+    setNombreEmpresa(nombreEmpresa);
+    setNombreSede(nombreSede);
+    setNombreTipo(nombreTipo);
+    setCantidadHoras(cantidadHorasTipo);
+    setValorHora(valorHoraTipo);
 }
 
 
@@ -38,28 +38,28 @@ Fecha Servicio::getFecha(){
     return _fecha;
 }
 
-std::string Servicio::getDniMasajista(){
-    return _dniMasajista;
+std::string Servicio::getnombreMasajista(){
+    return _nombreMasajista;
 }
 
-int Servicio::getIdEmpresa(){
-    return _idEmpresa;
+std::string Servicio::getNombreEmpresa(){
+    return _nombreEmpresa;
 }
 
-int Servicio::getIdSede(){
-    return _idSede;
+std::string Servicio::getNombreSede(){
+    return _nombreSede;
 }
 
-int Servicio::getIdTpo(){
-    return _idTipo;
+std::string Servicio::getNombreTpo(){
+    return _nombreTipo;
 }
 
-int Servicio::getCantidadHoras(){
-    return _cantidadHoras;
+int Servicio::getCantidadHorasTipo(){
+    return _cantidadHorasTipo;
 }
 
-float Servicio::getValorHora(){
-    return _valorHora;
+float Servicio::getValorHoraTipo(){
+    return _valorHoraTipo;
 }
 
 
@@ -72,28 +72,28 @@ void Servicio::setFecha(Fecha fecha){
     _fecha = fecha;
 }
 
-void Servicio::setDniMasajista(std::string dniMasajista){
-    strcpy(_dniMasajista, dniMasajista.c_str());
+void Servicio::setNombreMasajista(std::string nombreMasajista){
+    strcpy(_nombreMasajista, nombreMasajista.c_str());
 }
 
-void Servicio::setIdEmpresa(int idEmpresa){
-    _idEmpresa = idEmpresa;
+void Servicio::setNombreEmpresa(std::string nombreEmpresa){
+    strcpy(_nombreEmpresa, nombreEmpresa.c_str());
 }
 
-void Servicio::setIdSede(int idSede){
-    _idSede = idSede;
+void Servicio::setNombreSede(std::string nombreSede){
+    strcpy(_nombreSede, nombreSede.c_str());
 }
 
-void Servicio::setIdTipo(int idTipo){
-    _idTipo = idTipo;
+void Servicio::setNombreTipo(std::string nombreTipo){
+    strcpy(_nombreTipo, nombreTipo.c_str());
 }
 
-void Servicio::setCantidadHoras(int cantidadHoras){
-    _cantidadHoras = cantidadHoras;
+void Servicio::setCantidadHoras(int cantidadHorasTipo){
+    _cantidadHorasTipo = cantidadHorasTipo;
 }
 
-void Servicio::setValorHora(float valorHora){
-    _valorHora = valorHora;
+void Servicio::setValorHora(float valorHoraTipo){
+    _valorHoraTipo = valorHoraTipo;
 }
 
 
@@ -102,22 +102,22 @@ std::string Servicio::enviarAcsv(){
     string cadena = "";
     cadena = to_string(_idServicio) + ",";
     cadena += _fecha.convertirACadena() + ",";
-    cadena += string(_dniMasajista) + ",";
-    cadena += to_string(_idEmpresa) + ",";
-    cadena += to_string(_idSede) + ",";
-    cadena += to_string(_idTipo) + ",";
-    cadena += to_string(_cantidadHoras) + ",";
-    cadena += to_string(_valorHora);
+    cadena += string(_nombreMasajista) + ",";
+    cadena += string(_nombreEmpresa) + ",";
+    cadena += string(_nombreSede) + ",";
+    cadena += string(_nombreTipo) + ",";
+    cadena += to_string(_cantidadHorasTipo) + ",";
+    cadena += to_string(_valorHoraTipo);
 }
 
 std::string Servicio::mostrarEnPantalla(){
     string cadena = "";
     cadena = to_string(_idServicio) + "  ";
     cadena += _fecha.convertirACadena() + "  ";
-    cadena += string(_dniMasajista) + "  ";
-    cadena += to_string(_idEmpresa) + "  ";
-    cadena += to_string(_idSede) + "  ";
-    cadena += to_string(_idTipo) + "  ";
-    cadena += to_string(_cantidadHoras) + "  ";
-    cadena += to_string(_valorHora);
+    cadena += string(_nombreMasajista) + "  ";
+    cadena += string(_nombreEmpresa) + "  ";
+    cadena += string(_nombreSede) + "  ";
+    cadena += string(_nombreTipo) + "  ";
+    cadena += to_string(_cantidadHorasTipo) + "  ";
+    cadena += to_string(_valorHoraTipo);
 }

@@ -165,13 +165,14 @@
 	<string>
 	<iomanip>
 
-1751245442 source:c:\users\otto pereda\onedrive\documentos\utn\tse tup 2024-2026\2025 - 2do cuatrimestre\programación ii\ti grupo 33\app_masajistas\menu.cpp
+1751312781 source:c:\users\otto pereda\onedrive\documentos\utn\tse tup 2024-2026\2025 - 2do cuatrimestre\programación ii\ti grupo 33\app_masajistas\menu.cpp
 	<iostream>
 	<stdlib.h>
 	"Menu.h"
 	"EmpresaManager.h"
 	"MasajistaManager.h"
 	"SedeManager.h"
+	"ServicioManager.h"
 	"TipoServicioManager.h"
 
 1750980988 source:c:\users\otto pereda\onedrive\documentos\utn\tse tup 2024-2026\2025 - 2do cuatrimestre\programación ii\ti grupo 33\app_masajistas\classes\validacion.cpp
@@ -215,7 +216,7 @@
 
 1751211332 c:\users\otto pereda\onedrive\documentos\utn\tse tup 2024-2026\2025 - 2do cuatrimestre\programación ii\ti grupo 33\app_masajistas\headers\sedemanager.h
 
-1751210673 source:c:\users\otto pereda\onedrive\documentos\utn\tse tup 2024-2026\2025 - 2do cuatrimestre\programación ii\ti grupo 33\app_masajistas\managers\sedemanager.cpp
+1751289065 source:c:\users\otto pereda\onedrive\documentos\utn\tse tup 2024-2026\2025 - 2do cuatrimestre\programación ii\ti grupo 33\app_masajistas\managers\sedemanager.cpp
 	"Sede.h"
 	"SedeArchivo.h"
 	"SedeManager.h"
@@ -224,4 +225,24 @@
 	"EmpresaManager.h"
 	<iostream>
 	<cstring>
+
+1751296759 source:c:\users\otto pereda\onedrive\documentos\utn\tse tup 2024-2026\2025 - 2do cuatrimestre\programación ii\ti grupo 33\app_masajistas\classes\servicio.cpp
+	"Servicio.h"
+	<iostream>
+	<cstring>
+
+1751306297 c:\users\otto pereda\onedrive\documentos\utn\tse tup 2024-2026\2025 - 2do cuatrimestre\programación ii\ti grupo 33\app_masajistas\headers\servicio.h
+	"Fecha.h"
+
+1751287920 source:c:\users\otto pereda\onedrive\documentos\utn\tse tup 2024-2026\2025 - 2do cuatrimestre\programación ii\ti grupo 33\app_masajistas\files\servicioarchivo.cpp
+	"ServicioArchivo.h"
+	"ServicioManager.h"
+	<iostream>
+	<cstring>
+
+1751287889 c:\users\otto pereda\onedrive\documentos\utn\tse tup 2024-2026\2025 - 2do cuatrimestre\programación ii\ti grupo 33\app_masajistas\headers\servicioarchivo.h
+	"Servicio.h"
+	<string>
+
+1751318543 c:\users\otto pereda\onedrive\documentos\utn\tse tup 2024-2026\2025 - 2do cuatrimestre\programación ii\ti grupo 33\app_masajistas\headers\serviciomanager.h
 

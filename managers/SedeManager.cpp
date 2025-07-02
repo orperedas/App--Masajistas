@@ -76,7 +76,6 @@ void SedeManager::cargar(){
     id = sArchivo.getCantidadSedes() + 1;
 
     empresaManager.EmpresasActivas();
-
     cout << "Ingrese ID de la empresa a la que pertenece la sede:";
     cin >> idEmpresa;
 
